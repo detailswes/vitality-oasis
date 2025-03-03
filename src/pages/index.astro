@@ -21,22 +21,13 @@ import StoriesSlider from "@/components/home/react/StoriesSlider";
 import GetHelpNowBtn from "@/components/home/astro/GetHelpNowBtn.astro";
 import { commonBtnsData } from "@/data/commonBtnsData";
 import TransformSection from "@/components/home/astro/TransformSection.astro";
+import StorySection from "@/components/home/react/Story";
 ---
 
 <Layout>
   <HeroSection />
   <TransformSection/>
-  <ExitIntentPopup client:load />
-
-  <HelpSection />
-
-  <RecoverySection
-    recoveryImage={HandsImage}
-    callMessageAction={CallMessageIcon}
-  />
-
   <Insurance />
-
   <section>
     <h2
       class="text-center text-4xl md:text-[56px] text-text mt-[82px] font-medium font-Bodonitown"
@@ -103,7 +94,19 @@ import TransformSection from "@/components/home/astro/TransformSection.astro";
     </div>
   </div>
 
-  <section
+  <StorySection client:only />
+
+  <!-- <ExitIntentPopup client:load /> -->
+
+  <!-- <HelpSection /> -->
+
+  <RecoverySection
+    recoveryImage={HandsImage}
+    callMessageAction={CallMessageIcon}
+  />
+
+  
+  <!-- <section
     class="py-[77px] mt-[78px] h-[790px] stories-banner bg-cover bg-center bg-no-repeat px-4"
   >
     <div class="max-w-[1200px] w-full mx-auto">
@@ -128,20 +131,20 @@ import TransformSection from "@/components/home/astro/TransformSection.astro";
         </div>
       </div>
 
-      <StoriesSlider client:only />
+    
 
       <div class="flex justify-center mt-[70px] md:mt-5">
         <GetHelpNowBtn />
       </div>
     </div>
-  </section>
+  </section> -->
 
-  <WhyChooseUs
+  <!-- <WhyChooseUs
     privacyIcon={PrivacyIcon}
     careIcon={CareIcon}
     hospitalityIcon={HospitalityIcon}
     whyChooseImage={WhyChooseImage}
-  />
+  /> -->
 
   <Faq client:load />
 

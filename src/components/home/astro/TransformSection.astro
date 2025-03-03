@@ -1,5 +1,6 @@
 ---
 import { transformSectionData } from "@/data/transformSectionData";
+import { Image } from "astro:assets";
 ---
 
 <div class="max-w-7xl mx-auto px-4 py-10">
@@ -14,9 +15,9 @@ import { transformSectionData } from "@/data/transformSectionData";
  
         {transformSectionData.images.map((text, index) => (
             <div class="relative group overflow-hidden">
-                <img src={text.image} alt={`Rehab Image ${index + 1}`} class="w-full h-auto rounded-lg" />
+                <Image width="388" height="330" src={text.image } alt={`Rehab Image ${index + 1}`} class="w-full h-auto rounded-lg" />
                 <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <p class="text-white text-xl font-bold">{text.name}</p>
+                    <p class="text-white text-xl font-bold">{text.title}</p>
                 </div>
             </div>
         ))}
