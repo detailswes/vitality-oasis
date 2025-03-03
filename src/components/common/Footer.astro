@@ -1,0 +1,146 @@
+---
+import { Image } from "astro:assets";
+import WhiteLogo from "@/assets/images/white-logo.svg";
+import FacebookIcon from "@/assets/icons/fb.svg";
+import XIcon from "@/assets/icons/x.svg";
+import InstagramIcon from "@/assets/icons/instagram.svg";
+import TikTokIcon from "@/assets/icons/tiktok.svg";
+import CallIcon from "@/assets/icons/call.svg";
+import EnvelopIcon from "@/assets/icons/envelop.svg";
+import MailIcon from "@/assets/icons/mail.svg";
+import SubscribeForm from "@/components/home/react/SubscribeForm";
+
+// Social Media Icons
+const socialIcons = [
+  { src: XIcon, alt: "X icon" },
+  { src: FacebookIcon, alt: "Facebook icon" },
+  { src: InstagramIcon, alt: "Instagram icon" },
+  { src: TikTokIcon, alt: "TikTok icon" },
+];
+
+// Pages Links
+const pagesLinks = [
+  [
+    { name: "Home", href: "#" },
+    { name: "About us", href: "#" },
+    { name: "Programs", href: "#" },
+    { name: "Treatments", href: "#" },
+  ],
+  [
+    { name: "Gallery", href: "#" },
+    { name: "Enquire", href: "#" },
+    { name: "FAQ", href: "#" },
+    { name: "Contact us", href: "#" },
+  ],
+];
+
+// Contact Information
+const contactDetails = [
+  {
+    icon: MailIcon,
+    text: "511 SW 10th Ave 1206, Portland, OR United States",
+    href: null,
+  },
+  {
+    icon: CallIcon,
+    text: "855-871-53321",
+    href: "tel:855-871-53321",
+  },
+  {
+    icon: EnvelopIcon,
+    text: "contact@rehabcenter.com",
+    href: "mailto:contact@rehabcenter.com",
+  },
+];
+---
+
+<footer
+  class="footer-bg bg-center bg-cover bg-no-repeat relative overflow-hidden"
+>
+  <div
+    class="pt-11 pb-14 px-4 max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between gap-12 md:gap-4"
+  >
+    <!-- Logo Section -->
+    <div class="w-full sm:max-w-60">
+      <a href="/">
+        <Image src={WhiteLogo} alt="white-logo" class="md:w-full" />
+      </a>
+      <p class="text-sm text-white leading-[22px] mt-5">
+        We provide a healthy environment uniquely suited to support your growth
+        and healing.
+      </p>
+
+      <div class="flex mt-[15px] gap-3">
+        <!-- Social Media Icons -->
+        {
+          socialIcons.map((icon) => (
+            <Image
+              src={icon.src}
+              alt={icon.alt}
+              class="cursor-pointer hover:scale-125 transition-transform"
+            />
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Pages Section -->
+    <div class="w-full sm:max-w-44">
+      <p class="text-lg font-medium text-white pb-[10px]">Pages</p>
+      <div class="flex gap-14 md:gap-2 md:justify-between">
+        <!-- Page Links -->
+        {
+          pagesLinks.map((group) => (
+            <div class="flex flex-col gap-[10px]">
+              {group.map((link) => (
+                <li class="list-none">
+                  <a
+                    href={link.href}
+                    class="text-[#F7F7FB] text-sm hover:underline"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="w-full sm:max-w-[212px]">
+      <p class="text-lg font-medium text-white pb-[10px]">Contact Us</p>
+      {
+        contactDetails.map((contact) => (
+          <div class="flex gap-2 mt-[10px]">
+            <Image src={contact.icon} alt="contact icon" />
+            <p class="text-sm font-medium text-[#F7F7FB]">
+              {contact.href ? (
+                <a href={contact.href}>{contact.text}</a>
+              ) : (
+                contact.text
+              )}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Subscribe Form -->
+    <SubscribeForm client:load />
+  </div>
+
+  <div class="p-[18px] bg-[#0D0840] z-50">
+    <p class="text-center text-[#9092A7]">
+      Copyright © 2025 <a href="/" class="text-secondary">Rehab Center</a> | All
+      Rights Reserved
+    </p>
+  </div>
+</footer>
+
+<style>
+  .footer-bg {
+    background-image: url("../../assets/images/footer-bg.svg");
+  }
+</style>

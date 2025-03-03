@@ -1,0 +1,50 @@
+---
+import { Image } from "astro:assets";
+import { insuranceData } from "@/data/insuranceData";
+import BlackMobileIcon from "@/assets/icons/black-phone.svg";
+import { commonBtnsData } from "@/data/commonBtnsData";
+---
+
+<section
+  class="max-w-[1200px] mx-auto bg-primary text-white rounded-sm text-center mb-[80px] mt-16 md:mt-24 px-6 sm:px-4 py-16"
+>
+  <h2 class="text-4xl font-medium font-Bodonitown md:text-[40px]">
+    {insuranceData.heading}
+  </h2>
+  <p class="mt-2 text-xl">{insuranceData.subheading}</p>
+
+  <div
+    class="flex max-w-[900px] w-full mx-auto items-center justify-center flex-wrap gap-6 mt-[54px]"
+  >
+    {
+      insuranceData.brands.map((item, index) => (
+        <div>
+          <Image src={item.image} alt={`Brand ${index + 1}`} />
+        </div>
+      ))
+    }
+  </div>
+
+  <p class="max-w-[674px] mx-auto mt-[54px] text-xl">
+    {insuranceData.description}
+  </p>
+
+  <div class="flex justify-center mt-5">
+    <a href="tel:855-871-53321">
+      <div
+        class="flex p-3 rounded-[6px] bg-secondary hover:bg-white transition-colors w-full md:max-w-[384px] md:min-w-[384px] flex-col justify-center items-center gap-1"
+      >
+        <div class="w-full flex items-center justify-center gap-2">
+          <Image src={BlackMobileIcon} alt="black-phone" />
+          <p class="text-text text-2xl font-semibold">
+            {commonBtnsData.getHelpNow}
+          </p>
+        </div>
+
+        <p class="text-text text-xl font-semibold">
+          {commonBtnsData.phoneNumber}
+        </p>
+      </div>
+    </a>
+  </div>
+</section>
