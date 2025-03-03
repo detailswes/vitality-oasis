@@ -20,11 +20,12 @@ import PlayIcon from "@/assets/icons/play.svg";
 import StoriesSlider from "@/components/home/react/StoriesSlider";
 import GetHelpNowBtn from "@/components/home/astro/GetHelpNowBtn.astro";
 import { commonBtnsData } from "@/data/commonBtnsData";
+import TransformSection from "@/components/home/astro/TransformSection.astro";
 ---
 
 <Layout>
   <HeroSection />
-
+  <TransformSection/>
   <ExitIntentPopup client:load />
 
   <HelpSection />

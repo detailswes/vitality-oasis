@@ -1,0 +1,29 @@
+---
+import { transformSectionData } from "@/data/transformSectionData";
+---
+
+<div class="max-w-7xl mx-auto px-4 py-10">
+    <h2 class="text-4xl font-bold text-center mb-6">
+        {transformSectionData.heading}
+    </h2>
+    <p class="text-lg text-center mb-8">
+        {transformSectionData.description}   
+     </p>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+ 
+        {transformSectionData.images.map((text, index) => (
+            <div class="relative group overflow-hidden">
+                <img src={text.image} alt={`Rehab Image ${index + 1}`} class="w-full h-auto rounded-lg" />
+                <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <p class="text-white text-xl font-bold">{text.name}</p>
+                </div>
+            </div>
+        ))}
+        
+    </div>
+
+    <p class="text-lg text-center mt-8">
+        Designed with your recovery at top of mind. Our design prioritizes your recovery, ensuring every detail is crafted with your comfort and well-being in mind. From thoughtful features to supportive elements, we are committed to providing you with a seamless and restorative experience.
+    </p>
+</div>

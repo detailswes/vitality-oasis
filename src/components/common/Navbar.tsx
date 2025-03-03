@@ -80,21 +80,6 @@ export default function Navbar() {
           <img src={Logo.src} alt="Logo" className="w-[178px] sm:w-[242px]" />
         </a>
 
-        {/* Desktop Menu */}
-        <nav className="hidden md:flex space-x-[21px] text-[#585858]">
-          {NAV_LINKS.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className={`hover:text-primary transition ${
-                activeLink === link.href ? "text-primary" : ""
-              }`}
-            >
-              {link.name}
-            </a>
-          ))}
-        </nav>
-
         {/* Mobile Menu Toggle */}
         <Button
           ref={buttonRef}
@@ -116,6 +101,8 @@ export default function Navbar() {
             />
           </svg>
         </Button>
+
+        
       </div>
 
       {/* Mobile Menu */}
