@@ -1,30 +1,45 @@
 ---
 import { transformSectionData } from "@/data/transformSectionData";
 import { Image } from "astro:assets";
+import GetHelpNowBtn from "./GetHelpNowBtn.astro";
 ---
+<div class=" max-w-7xl mx-auto mt-5 bg-white border border-gray-300 rounded-lg p-6 text-center shadow-md">
+  {transformSectionData.teamtext}
+</div>
 
 <div class="max-w-7xl mx-auto px-4 py-10">
-    <h2 class="text-4xl font-bold text-center mb-6">
-        {transformSectionData.heading}
-    </h2>
-    <p class="text-lg text-center mb-8">
-        {transformSectionData.description}   
-     </p>
-    
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
- 
-        {transformSectionData.images.map((text, index) => (
-            <div class="relative group overflow-hidden">
-                <Image width="388" height="330" src={text.image } alt={`Rehab Image ${index + 1}`} class="w-full h-auto rounded-lg" />
-                <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <p class="text-white text-xl font-bold">{text.title}</p>
-                </div>
-            </div>
-        ))}
-        
-    </div>
+  <h2 class="text-4xl font-bold text-center mb-6">
+    {transformSectionData.heading}
+  </h2>
+  <p class="text-lg text-center mb-8">
+    {transformSectionData.description}
+  </p>
 
-    <p class="text-lg text-center mt-8">
-        Designed with your recovery at top of mind. Our design prioritizes your recovery, ensuring every detail is crafted with your comfort and well-being in mind. From thoughtful features to supportive elements, we are committed to providing you with a seamless and restorative experience.
-    </p>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    {transformSectionData.images.map((text, index) => (
+      <div  class="relative group overflow-hidden">
+        <Image
+          width="388"
+          height="330"
+          src={text.image}
+          alt={`Rehab Image ${index + 1}`}
+          class="w-full h-auto rounded-lg"
+        />
+      <div class="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 text-center">
+        <p class="text-white text-xl font-bold">{text.title}</p>
+        <p class="text-white text-sm mt-2">
+          {text.description || "This is a sample description text."}
+        </p>
+      </div>
+      </div>
+    ))}
+  </div>
+  
+  <div class="flex flex-col items-center text-center mt-8">
+    <p class="text-lg mb-8">{transformSectionData.CounsellorsText}</p>
+    <GetHelpNowBtn />
+    <p class="text-lg mt-8">{transformSectionData.available}</p>
+  </div>
+  
+ 
 </div>

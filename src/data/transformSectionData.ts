@@ -45,7 +45,11 @@ export const transformSectionData = {
            
             image:room2
         }
-    ]
+    ],
+    CounsellorsText:"Our Compassionate Care Counsellors are Ready to Help.",
+    available:" 100% Confidential  | No Obligations  |  Available 24/7",
+    teamtext: "Our compassionate team, holistic therapies, and serene setting empower you to achieve lasting sobriety and a fulfilling life beyond addiction."
+
 }
   
 
