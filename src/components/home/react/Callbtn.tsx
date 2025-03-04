@@ -1,11 +1,13 @@
+const CallBtn = () => {
+    return (
 
-<div class="flex flex-col sm:flex-row mx-4 justify-center mt-12 gap-3">
+<div className="flex flex-col sm:flex-row mx-4 justify-center mt-12 gap-3">
     <div>
       <a href="tel:855-871-53321">
         <div
-          class="flex py-3 px-8 rounded-[6px] bg-secondary hover:bg-primary text-text hover:text-white transition-colors w-full flex-col justify-center items-center gap-1"
+          className="flex py-3 px-8 rounded-[6px] bg-secondary hover:bg-primary text-text hover:text-white transition-colors w-full flex-col justify-center items-center gap-1"
         >
-          <div class="w-full flex items-center justify-center gap-2">
+          <div className="w-full flex items-center justify-center gap-2">
             <svg
               width="23"
               height="21"
@@ -35,9 +37,12 @@
            
           </div>
 
-          <p class="text-xl font-semibold">(855)-871-53321 </p>
+          <p className="text-xl font-semibold">(855)-871-53321 </p>
         </div>
       </a>
     </div>
 
   </div>
+    );
+};
+export default CallBtn;
