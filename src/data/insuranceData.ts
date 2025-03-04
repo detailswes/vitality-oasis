@@ -28,4 +28,5 @@ export const insuranceData = {
     { image: Brand10 },
     { image: Brand11 },
   ],
+  btnbelowtext:"Available 24/7"
 };

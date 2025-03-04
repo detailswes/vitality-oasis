@@ -1,7 +1,7 @@
 export const recoverySectionData = {
-  title: "Let’s Start Your Recovery!",
+  title: "Begin Your Journey to Lasting Recovery!",
   description:
-    "Our sole mission is to provide you or your loved one with the personalized addiction treatment you need!",
+    "Taking the first step is often the hardest. We're here to make it easier. Fill out this form, and our admissions team will contact you for a confidential, no-obligation consultation.",
   phoneNumber: "855-871-53321",
   callMessageTitle: "*100% Confidential",
   callMessageDescription:

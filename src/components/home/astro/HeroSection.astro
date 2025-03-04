@@ -1,11 +1,12 @@
 ---
 import { heroSectionData } from "@/data/heroSectionData";
-import blueCheck from "@/assets/icons/blue-check.svg";
 import scriptCertified from "@/assets/images/script.svg";
 import carfCertified from "@/assets/images/carf.svg";
 import googleImage from "@/assets/images/google.svg";
 import starIcon from "@/assets/icons/star.svg";
 import { Image } from "astro:assets";
+import Getreviewsection from "./Getreviewsection.astro";
+
 ---
 
 <section class="flex lg:flex-row flex-col">
@@ -33,7 +34,7 @@ import { Image } from "astro:assets";
             </div>
           </a>
         </div>
-        
+
         <div>
           <a href={`tel:${heroSectionData.contactNumber}`}>
             <div
@@ -76,42 +77,25 @@ import { Image } from "astro:assets";
               </p>
             </div>
           </a>
-        </div>
-
-
+        </div> 
       </div>
       <div>
         <p class="mt-[9px] font-medium mb-2">{heroSectionData.reviewheading}</p>
 
       </div>
-      <div
-        class="flex gap-4 md:gap-10 px-6 md:px-[36px] py-5 rounded-[6px] mt-[14px] md:max-w-[454px]"
-      >
-        <Image src={scriptCertified} alt="script-certified" />
-        <Image src={carfCertified} alt="carf-certified" />
-        <div class="flex items-center gap-[6px]">
-          <Image src={googleImage} alt="google-reviews" />
-          <div>
-            <p class="font-bold">{heroSectionData.reviews.title}</p>
-            <div class="flex items-center gap-[5px]">
-              <p class="text-[15px] font-bold">
-                {heroSectionData.reviews.rating}
-              </p>
-              {
-                Array.from({ length: 5 }).map(() => (
-                  <Image src={starIcon} alt="rating-star" />
-                ))
-              }
-            </div>
-          </div>
-        </div>
-      </div>
+      <div>
+        <p class="mt-[10px] leading-[27px] text-[#5C3666]">
+          {heroSectionData.reviewheading}
+        </p>
+       </div>
+<Getreviewsection />
     </div>
   </div>
   <div
     class="flex-1 hero-section min-h-[366px] md:min-h-[766px] bg-right bg-cover bg-no-repeat"
   >
   </div>
+  
 </section>
 <style>
   .hero-section {

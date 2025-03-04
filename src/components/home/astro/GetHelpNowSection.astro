@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import BlackMobileIcon from "@/assets/icons/black-phone.svg";
 import { commonBtnsData } from "@/data/commonBtnsData";
+import GetHelpNowBtn from "./GetHelpNowBtn.astro";
 ---
 
 <section
@@ -10,30 +11,14 @@ import { commonBtnsData } from "@/data/commonBtnsData";
   <h2
     class="max-w-[1028px] w-full mx-auto text-4xl md:text-[45px] font-Bodonitown text-white font-medium leading-[66px] text-center"
   >
-  Every recovery journey is unique. Our compassionate team provides personalized care and evidence-based treatment, empowering you to achieve lasting sobriety and a fulfilling life beyond addiction.
-  </h2>
+  You don't have to face addiction alone. We offer a beacon of hope and a supportive environment where you can reclaim your life and discover a brighter future.  </h2>
 
-  <a href="tel:855-871-53321">
-    <div
-      class="flex p-3 rounded-[6px] bg-secondary hover:bg-white transition-colors w-full md:max-w-[384px] md:min-w-[384px] flex-col justify-center items-center gap-1"
-    >
-      <div class="w-full flex items-center justify-center gap-2">
-        <Image src={BlackMobileIcon} alt="black-phone" />
-        <p class="text-text text-2xl font-semibold">
-          {commonBtnsData.getHelpNow}
-        </p>
-      </div>
-
-      <p class="text-text text-xl font-semibold">
-        {commonBtnsData.phoneNumber}
-      </p>
-    </div>
-  </a>
+  <GetHelpNowBtn />
 </section>
 
 <style>
   .empowering {
-    background-image: url("../assets/images/empower.svg");
+    background-color: #553665;
     background-size: cover; /* Ensures the image covers the entire section */
     background-position: center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents tiling */

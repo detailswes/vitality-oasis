@@ -15,19 +15,19 @@ const StorySection = () => {
             id: "card1",
             name: "Sarah J",
             title: "Focus on Hope and Transformation",
-            review: "I came to this rehab center feeling lost and hopeless. Addiction had taken over my life, and I didn't know how to get back on track. But the compassionate staff, the holistic therapies, and the supportive environment gave me the strength to heal",
+            review: "I came to this rehab center feeling lost and hopeless. Addiction had taken over my life, and I didn't know how to get back on track. But the compassionate staff, the holistic therapies, and the supportive environment gave me the strength to heal.",
         },
         {
             id: "card2",
             name: "Michael B",
             title: "Focus on Personalized Care and Lasting Sobriety",
-            review: "What impressed me most about this rehab center was the personalized approach. They took the time to understand my unique needs and challenges, and they created a treatment plan specifically for me",
+            review: "What impressed me most about this rehab center was the personalized approach. They took the time to understand my unique needs and challenges, and they created a treatment plan specifically for me.",
         },
         {
             id: "card3",
             name: "Emily R",
             title: "Focus on Community and Support",
-            review: "The sense of community at this rehab center was incredible. I finally felt like I wasn't alone in my struggles. The group therapy sessions were powerful, and the friendships I made were invaluable. I learned so much from others who had been through similar",
+            review: "The sense of community at this rehab center was incredible. I finally felt like I wasn't alone in my struggles. The group therapy sessions were powerful, and the friendships I made were invaluable. I learned so much from others who had been through similar situations.",
         },
     ];
 
@@ -43,8 +43,8 @@ const StorySection = () => {
                     <div
                         key={story.id}
                         className={`bg-white rounded-lg shadow-lg p-5 transition-all duration-300 flex flex-col justify-between h-auto ${
-                            expandedCards[story.id] ? "overflow-visible" : "overflow-hidden"
-                        }`}
+                            expandedCards[story.id] ? "max-h-[500px]" : "max-h-[200px]"
+                        } overflow-hidden`}
                     >
                         <div>
                             <div className="flex items-center mb-3">

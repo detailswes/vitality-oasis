@@ -1,154 +1,37 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import HandsImage from "@/assets/images/hands.webp";
-import CareIcon from "@/assets/images/care.svg";
-import HospitalityIcon from "@/assets/images/hospitality.svg";
-import WhyChooseImage from "@/assets/images/why-choose.webp";
+import HandsImage from "@/assets/images/hands.svg";
 import Faq from "@/components/home/react/Faq";
-import { ExitIntentPopup } from "@/components/modal/ExitIntentPopup";
 import CallMessageIcon from "@/assets/icons/call-msg.svg";
 import HeroSection from "@/components/home/astro/HeroSection.astro";
-import HelpSection from "@/components/home/astro/HelpSection.astro";
 import RecoverySection from "@/components/home/astro/RecoverySection.astro";
 import Insurance from "@/components/home/astro/Insurance.astro";
-import WhyChooseUs from "@/components/home/astro/WhyChooseUs.astro";
-import PrivacyIcon from "@/assets/images/privacy.svg";
 import GetHelpNowSection from "@/components/home/astro/GetHelpNowSection.astro";
 import RehabProgramsSlider from "@/components/home/react/RehabProgramsSlider";
-import { Image } from "astro:assets";
-import PlayIcon from "@/assets/icons/play.svg";
-import StoriesSlider from "@/components/home/react/StoriesSlider";
-import GetHelpNowBtn from "@/components/home/astro/GetHelpNowBtn.astro";
 import { commonBtnsData } from "@/data/commonBtnsData";
 import TransformSection from "@/components/home/astro/TransformSection.astro";
 import StorySection from "@/components/home/react/Story";
+import FooterSection from "@/components/home/astro/FooterSection.astro";
+import Callbtn from "@/components/home/astro/Callbtn.astro";
 ---
 
 <Layout>
   <HeroSection />
   <TransformSection/>
   <Insurance />
-  <section>
-    <h2
-      class="text-center text-4xl md:text-[56px] text-text mt-[82px] font-medium font-Bodonitown"
-    >
-    Find Hope and Healing
-    </h2>
-    <p class="text-center mt-4">Discover Our Comprehensive Rehab Programs</p>
-    <div class="w-full max-w-[200px] h-[1px] orb-gradient-line mx-auto"></div>
-  </section>
-
-  <div class="overflow-auto flex gap-[14px] mt-16"></div>
-
   <RehabProgramsSlider client:only />
-
-  <div class="flex flex-col sm:flex-row mx-4 justify-center mt-12 gap-3">
-    <div>
-      <a href="tel:855-871-53321">
-        <div
-          class="flex py-3 px-8 rounded-[6px] bg-secondary hover:bg-primary text-text hover:text-white transition-colors w-full flex-col justify-center items-center gap-1"
-        >
-          <div class="w-full flex items-center justify-center gap-2">
-            <svg
-              width="23"
-              height="21"
-              viewBox="0 0 23 21"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M6.8786 1.55176C7.43615 1.55176 9.66637 6.166 9.66637 6.67869C9.66637 7.70408 7.9937 8.72946 7.43615 9.75485C6.8786 10.7802 7.9937 11.8056 9.10881 12.831C9.5437 13.2309 11.339 14.8818 12.4541 14.3691C13.5692 13.8564 14.6844 12.3183 15.7995 12.3183C16.357 12.3183 21.375 14.3691 21.375 14.8818C21.375 16.9326 19.7023 18.4706 18.0297 18.9833C16.357 19.496 15.2419 19.496 13.0117 18.9833C10.7815 18.4706 9.10881 17.9579 6.32104 15.3945C3.53327 12.831 2.97572 11.2929 2.41817 9.24216C1.86061 7.19138 1.86061 6.166 2.41817 4.62792C2.97572 3.08984 4.64838 1.55176 6.8786 1.55176Z"
-                stroke="currentColor"
-                stroke-width="2.23022"
-                stroke-linecap="round"
-                stroke-linejoin="round"></path>
-              <path
-                d="M13.5692 5.69421C14.3052 6.01208 14.9743 6.44275 15.5318 6.96569C16.0782 7.46813 16.5354 8.07311 16.87 8.72936"
-                stroke="currentColor"
-                stroke-width="2.23022"
-                stroke-linecap="round"
-                stroke-linejoin="round"></path>
-              <path
-                d="M14.6843 1.80798C16.2566 2.18738 17.6617 2.93591 18.7768 3.9613C19.8807 4.98668 20.6948 6.26842 21.0962 7.70396"
-                stroke="currentColor"
-                stroke-width="2.23022"
-                stroke-linecap="round"
-                stroke-linejoin="round"></path>
-            </svg>
-            <p class="text-xl font-semibold">{commonBtnsData.getHelpNow}</p>
-          </div>
-
-          <p class="text-xl font-semibold">{commonBtnsData.phoneNumber}</p>
-        </div>
-      </a>
-    </div>
-
-    <div>
-      <a href="/assesment/">
-        <div
-          class="text-xl font-sans text-center cursor-pointer py-[27px] rounded-[6px] px-5 bg-secondary text-text hover:bg-primary hover:text-white transition-colors text-[13px] font-semibold"
-        >
-          Begin Assessment
-        </div>
-      </a>
-    </div>
+  <Callbtn/>
+  <div class="text-center mt-12">
+    <p class="text-xl font-semibold">Confidential |  Free  |  Available 24/7</p>
   </div>
-
   <StorySection client:only />
-
-  <!-- <ExitIntentPopup client:load /> -->
-
-  <!-- <HelpSection /> -->
-
+  <GetHelpNowSection />
   <RecoverySection
     recoveryImage={HandsImage}
     callMessageAction={CallMessageIcon}
   />
-
-  
-  <!-- <section
-    class="py-[77px] mt-[78px] h-[790px] stories-banner bg-cover bg-center bg-no-repeat px-4"
-  >
-    <div class="max-w-[1200px] w-full mx-auto">
-      <h2
-        class="text-5xl md:text-[70px] font-medium text-white leading-[62px] md:leading-[77px] font-Bodonitown"
-      >
-        Watch the Stories <br />Of Recovery
-      </h2>
-      <div class="w-[115px] bg-[#D9D9D9] h-[1px] mt-2"></div>
-
-      <div class="flex items-start gap-4 mt-10 md:mt-16">
-        <Image src={PlayIcon} alt="play-icon" class:list="w-[68px]" />
-
-        <div>
-          <h6 class="text-4xl text-white font-Bodonitown font-medium">
-            Sam’s Recovery Story
-          </h6>
-          <p class="text-white leading-[29px] w-full sm:max-w-[356px]">
-            Making the phone call for help can be a daunting first step for
-            those struggling with addiction!
-          </p>
-        </div>
-      </div>
-
-    
-
-      <div class="flex justify-center mt-[70px] md:mt-5">
-        <GetHelpNowBtn />
-      </div>
-    </div>
-  </section> -->
-
-  <!-- <WhyChooseUs
-    privacyIcon={PrivacyIcon}
-    careIcon={CareIcon}
-    hospitalityIcon={HospitalityIcon}
-    whyChooseImage={WhyChooseImage}
-  /> -->
-
   <Faq client:load />
-
-  <GetHelpNowSection />
+ <FooterSection />
 </Layout>
 
 <style>

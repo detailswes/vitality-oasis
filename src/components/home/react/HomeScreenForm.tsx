@@ -12,10 +12,11 @@ const validationSchema = Yup.object().shape({
   email: Yup.string()
     .email("Invalid email address")
     .required("Email is required"),
-  date: Yup.string().required("Data is required"),
   message: Yup.string()
     .required("Message is required")
     .min(10, "Message must be at least 10 characters"),
+  optInCall: Yup.boolean().oneOf([true], "You must accept the Opt-in Call"),
+  optInSMS: Yup.boolean().oneOf([true], "You must accept the Opt-in SMS"),
 });
 
 // Helper function for dynamic class names
@@ -34,8 +35,9 @@ export default function HomeScreenForm() {
       initialValues={{
         name: "",
         email: "",
-        date: "",
         message: "",
+        optInCall: false, // Ensure this is a boolean
+        optInSMS: false,  // Ensure this is a boolean
       }}
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
@@ -74,26 +76,6 @@ export default function HomeScreenForm() {
             </div>
           </div>
 
-          {/* Date Field */}
-          <div className="w-full">
-            <Field
-              name="date"
-              as={Input}
-              placeholder="Data"
-              type="text"
-              className={`mt-[14px] ${getFieldClassNames(
-                "date",
-                touched,
-                errors
-              )}`}
-            />
-            <ErrorMessage
-              name="date"
-              component="div"
-              className="text-red-500 text-sm mt-1"
-            />
-          </div>
-
           {/* Message Field */}
           <Field
             name="message"
@@ -110,12 +92,52 @@ export default function HomeScreenForm() {
             className="text-red-500 text-sm mt-1"
           />
 
+          {/* Opt-in Call Checkbox */}
+          <div className="mt-4">
+            <label className="flex items-center">
+              <Field
+                type="checkbox"
+                name="optInCall"
+                className="mr-2"
+              />
+              <span>Opt-in Call *</span>
+            </label>
+            <p className="text-sm text-gray-600">
+              By clicking this box you provide express written consent indicating a willingness for us to call you. We will never share your information.
+            </p>
+            <ErrorMessage
+              name="optInCall"
+              component="div"
+              className="text-red-500 text-sm mt-1"
+            />
+          </div>
+
+          {/* Opt-in SMS Checkbox */}
+          <div className="mt-4">
+            <label className="flex items-center">
+              <Field
+                type="checkbox"
+                name="optInSMS"
+                className="mr-2"
+              />
+              <span>Opt-in SMS *</span>
+            </label>
+            <p className="text-sm text-gray-600">
+              By clicking this box you provide express written consent indicating a willingness for us to send you SMS messages. We will never share your information.
+            </p>
+            <ErrorMessage
+              name="optInSMS"
+              component="div"
+              className="text-red-500 text-sm mt-1"
+            />
+          </div>
+
           <Button
             type="submit"
             disabled={isSubmitting}
             className="uppercase py-5 mt-5 h-[54px] px-[30px] hover:bg-secondary hover:text-black"
           >
-            Schedule a tour
+            Submit
           </Button>
         </Form>
       )}
