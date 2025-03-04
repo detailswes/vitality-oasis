@@ -1,0 +1,36 @@
+---
+import GetreviewsectionFooter from "./GetreviewsectionFooter.astro";
+import Callbtn from "./Callbtn.astro";
+---
+
+<section
+  class="empowering py-[72px] px-4 flex flex-col justify-center items-center gap-10"
+>
+  <h2
+    class="max-w-[1028px] w-full mx-auto text-4xl md:text-[45px] font-Bodonitown text-white font-medium leading-[66px] text-center"
+  >
+    Every recovery journey is unique. Our compassionate team provides
+    personalized care and evidence-based treatment, empowering you to achieve
+    lasting sobriety and a fulfilling life beyond addiction.
+    <div class="align-center">
+      <Callbtn />
+    </div>
+
+    <div>
+      <p class="mt-[10px] leading-[27px]">
+        100% Confidential | Free | Available
+      </p>
+    </div>
+    <GetreviewsectionFooter />
+  </h2>
+
+  <style>
+    .empowering {
+      background-image: url("../../../assets/images/empower.svg");
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  </style>
+</section>

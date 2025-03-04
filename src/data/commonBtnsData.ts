@@ -1,4 +1,4 @@
 export const commonBtnsData = {
-  getHelpNow: "Get Help Now",
+  getHelpNow: "Free Confidential Helpline",
   phoneNumber: "855-871-53321",
 };

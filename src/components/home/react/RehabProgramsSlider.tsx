@@ -5,15 +5,18 @@ import { useEffect, useState, type JSX } from "react";
 import ProgramOneImage from "@/assets/images/program-one.webp";
 import ProgramTwoImage from "@/assets/images/program-two.webp";
 import ProgramThreeImage from "@/assets/images/program-three.webp";
+import Popup from "@/components/modal/ProgramPopup";
 
 interface program {
   image: JSX.Element;
   text: string;
+  description: string;
 }
 
 const RehabProgramsSlider = () => {
   const [isMounted, setIsMounted] = useState(false);
-
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [selectedProgram, setSelectedProgram] = useState<program | null>(null);
   const settings = {
     dots: true,
     infinite: true,
@@ -62,6 +65,7 @@ const RehabProgramsSlider = () => {
         />
       ),
       text: "Inpatient Detox",
+      description: "Achieve lasting recovery while balancing your work, family, and other commitments. Our outpatient programs provide the support and guidance you need to navigate the challenges of addiction and build a fulfilling life."
     },
     {
       image: (
@@ -72,6 +76,8 @@ const RehabProgramsSlider = () => {
         />
       ),
       text: "Alcohol Rehab",
+      description: "Achieve lasting recovery while balancing your work, family, and other commitments. Our outpatient programs provide the support and guidance you need to navigate the challenges of addiction and build a fulfilling life."
+
     },
     {
       image: (
@@ -82,6 +88,8 @@ const RehabProgramsSlider = () => {
         />
       ),
       text: "Alumni Program",
+      description: "Achieve lasting recovery while balancing your work, family, and other commitments. Our outpatient programs provide the support and guidance you need to navigate the challenges of addiction and build a fulfilling life."
+
     },
     {
       image: (
@@ -92,6 +100,8 @@ const RehabProgramsSlider = () => {
         />
       ),
       text: "Inpatient Detox",
+      description: "Achieve lasting recovery while balancing your work, family, and other commitments. Our outpatient programs provide the support and guidance you need to navigate the challenges of addiction and build a fulfilling life."
+
     },
     {
       image: (
@@ -102,6 +112,8 @@ const RehabProgramsSlider = () => {
         />
       ),
       text: "Alcohol Rehab",
+      description: "Achieve lasting recovery while balancing your work, family, and other commitments. Our outpatient programs provide the support and guidance you need to navigate the challenges of addiction and build a fulfilling life."
+
     },
     {
       image: (
@@ -112,15 +124,37 @@ const RehabProgramsSlider = () => {
         />
       ),
       text: "Alumni Program",
+      description: "Achieve lasting recovery while balancing your work, family, and other commitments. Our outpatient programs provide the support and guidance you need to navigate the challenges of addiction and build a fulfilling life."
+
     },
   ];
 
+  const closePopup = () => {
+    setIsPopupOpen(false);
+    setSelectedProgram(null);
+  };
+
+  const handleImageClick = (program: program) => {
+    setSelectedProgram(program);
+    setIsPopupOpen(true);
+  };
   return (
-    <>
+    <> <section>
+      <h2
+        className="text-center text-4xl md:text-[56px] text-text mt-[82px] font-medium font-Bodonitown"
+      >
+        Find Hope and Healing
+      </h2>
+      <p className="text-center mt-4">Discover Our Comprehensive Rehab Programs</p>
+      <div className="w-full max-w-[200px] h-[1px] orb-gradient-line mx-auto"></div>
+    </section>
+
+      <div className="overflow-auto flex gap-[14px] mt-16"></div>
       <div className="pb-16 overflow-hidden">
         <Slider {...settings}>
           {programs.map((program, index) => (
             <div
+              onClick={() => handleImageClick(program)}
               key={index}
               className="w-[424px] pt-5 pl-4 pb-4 bg-[#F7F7FB] transition-all cursor-pointer hover:bg-secondary"
             >
@@ -157,6 +191,7 @@ const RehabProgramsSlider = () => {
           ))}
         </Slider>
       </div>
+      <Popup isOpen={isPopupOpen} onClose={closePopup} program={selectedProgram} />
     </>
   );
 };

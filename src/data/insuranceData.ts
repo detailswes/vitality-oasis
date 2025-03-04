@@ -11,10 +11,10 @@ import Brand10 from "@/assets/icons/brand10.svg";
 import Brand11 from "@/assets/icons/brand11.svg";
 
 export const insuranceData = {
-  heading: "Have Insurance Questions?",
-  subheading: "Your Policy May Cover Treatment Costs Fully",
+  heading: "Insurance May Cover Your Treatment",
+  subheading: "Our dedicated team of experts will help you navigate the insurance process, ensuring you receive the best possible care tailored to your needs.",
   description:
-    "Our dedicated team of experts will maximize your insurance benefits to ensure you receive the best care tailored to your needs.",
+    "Get a Free Confidential Insurance check",
   brands: [
     { image: Brand1 },
     { image: Brand2 },
@@ -28,4 +28,5 @@ export const insuranceData = {
     { image: Brand10 },
     { image: Brand11 },
   ],
+  btnbelowtext:"Available 24/7"
 };
