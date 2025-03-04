@@ -163,8 +163,7 @@ const RehabProgramsSlider = () => {
               </p>
               {program.image}
               <div className="mt-5 pr-5">
-                <a
-                  href="#"
+                <div
                   className="uppercase text-[#170F49] font-medium gap-2 items-center justify-between"
                 >
                   <div className="flex justify-between items-center">
@@ -185,7 +184,7 @@ const RehabProgramsSlider = () => {
                       />
                     </svg>
                   </div>
-                </a>
+                </div>
               </div>
             </div>
           ))}

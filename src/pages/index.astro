@@ -8,11 +8,11 @@ import RecoverySection from "@/components/home/astro/RecoverySection.astro";
 import Insurance from "@/components/home/astro/Insurance.astro";
 import GetHelpNowSection from "@/components/home/astro/GetHelpNowSection.astro";
 import RehabProgramsSlider from "@/components/home/react/RehabProgramsSlider";
-import { commonBtnsData } from "@/data/commonBtnsData";
 import TransformSection from "@/components/home/astro/TransformSection.astro";
 import StorySection from "@/components/home/react/Story";
 import FooterSection from "@/components/home/astro/FooterSection.astro";
 import Callbtn from "@/components/home/astro/Callbtn.astro";
+import Experience from "@/components/home/react/Experience";
 ---
 
 <Layout>
@@ -30,6 +30,7 @@ import Callbtn from "@/components/home/astro/Callbtn.astro";
     recoveryImage={HandsImage}
     callMessageAction={CallMessageIcon}
   />
+  <Experience/>
   <Faq client:load />
  <FooterSection />
 </Layout>
