@@ -6,7 +6,7 @@ import ProgramOneImage from "@/assets/images/program-one.webp";
 import ProgramTwoImage from "@/assets/images/program-two.webp";
 import ProgramThreeImage from "@/assets/images/program-three.webp";
 import Popup from "@/components/modal/ProgramPopup";
-
+import { Image } from "astro:assets";
 interface program {
   image: JSX.Element;
   text: string;
@@ -152,16 +152,17 @@ const RehabProgramsSlider = () => {
       <div className="overflow-auto flex gap-[14px] mt-16"></div>
       <div className="pb-16 overflow-hidden">
         <Slider {...settings}>
-          {programs.map((program, index) => (
+          {programs.map((program) => (
             <div
               onClick={() => handleImageClick(program)}
-              key={index}
+            
               className="w-[424px] pt-5 pl-4 pb-4 bg-[#F7F7FB] transition-all cursor-pointer hover:bg-secondary"
             >
               <p className="text-[#170F49] font-semibold text-[22px]">
                 {program.text}
               </p>
               {program.image}
+             
               <div className="mt-5 pr-5">
                 <div
                   className="uppercase text-[#170F49] font-medium gap-2 items-center justify-between"

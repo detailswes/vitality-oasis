@@ -1,16 +1,11 @@
 ---
 import { heroSectionData } from "@/data/heroSectionData";
-import scriptCertified from "@/assets/images/script.svg";
-import carfCertified from "@/assets/images/carf.svg";
-import googleImage from "@/assets/images/google.svg";
-import starIcon from "@/assets/icons/star.svg";
-import { Image } from "astro:assets";
-import Getreviewsection from "./Getreviewsection.astro";
 
+import GetreviewsectionHeader from "./GetreviewsectionHeader.astro";
 ---
 
 <section class="flex lg:flex-row flex-col">
-  <div class="flex-1 ">
+  <div class="flex-1">
     <div
       class="pl-4 xl:ml-auto text-white pt-[38px] w-full pb-4 pr-4 lg:pr-0 lg:max-w-[565px] mr-0 lg:mr-[36px]"
     >
@@ -28,7 +23,7 @@ import Getreviewsection from "./Getreviewsection.astro";
         <div>
           <a href="/assesment/">
             <div
-              class="text-xl font-sans text-center cursor-pointer py-[27px] rounded-[6px] px-5 bg-white border-2 border-red-500 text-[#553665]   text-[13px] font-semibold"
+              class="text-xl font-sans text-center cursor-pointer py-[27px] rounded-[6px] px-5 bg-white border-2 border-red-500 text-[#553665] text-[13px] font-semibold"
             >
               <span>{heroSectionData.assessmentText}</span>
             </div>
@@ -77,25 +72,23 @@ import Getreviewsection from "./Getreviewsection.astro";
               </p>
             </div>
           </a>
-        </div> 
+        </div>
       </div>
       <div>
         <p class="mt-[9px] font-medium mb-2">{heroSectionData.reviewheading}</p>
-
       </div>
       <div>
         <p class="mt-[10px] leading-[27px] text-[#5C3666]">
           {heroSectionData.reviewheading}
         </p>
-       </div>
-<Getreviewsection />
+      </div>
+      <GetreviewsectionHeader />
     </div>
   </div>
   <div
     class="flex-1 hero-section min-h-[366px] md:min-h-[766px] bg-right bg-cover bg-no-repeat"
   >
   </div>
-  
 </section>
 <style>
   .hero-section {

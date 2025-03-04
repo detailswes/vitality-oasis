@@ -16,13 +16,13 @@ import GetHelpNowBtn from "./GetHelpNowBtn.astro";
   </p>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-    {transformSectionData.images.map((text, index) => (
+    {transformSectionData.images.map((text) => (
       <div  class="relative group overflow-hidden">
         <Image
           width="388"
           height="330"
           src={text.image}
-          alt={`Rehab Image ${index + 1}`}
+          alt={text.title}
           class="w-full h-auto rounded-lg"
         />
       <div class="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 text-center">
