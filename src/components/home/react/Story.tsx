@@ -15,7 +15,7 @@ const StorySection = () => {
             id: "card1",
             name: "Sarah J",
             title: "Focus on Hope and Transformation",
-            review: "I came to this rehab center feeling lost and hopeless. Addiction had taken over my life, and I didn't know how to get back on track. But the compassionate staff, the holistic therapies, and the supportive environment gave me the strength to heal.",
+            review: "I came to this rehab center feeling lost and hopeless. Addiction had taken over my life, and I didn't know how to get back on track. But the compassionate staff, the holistic therapies, and the supportive environment gave me the strength to heal..I came to this rehab center feeling lost and hopeless. Addiction had taken over my life, and I didn't know how to get back on track. But the compassionate staff, the holistic therapies, and the supportive environment gave me the strength to heal.",
         },
         {
             id: "card2",
