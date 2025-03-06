@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import "slick-carousel/slick/slick.css";
 @import "slick-carousel/slick/slick-theme.css";
 
@@ -62,17 +63,19 @@
 }
 @layer base {
   * {
-    @apply border-border font-sans;
+    @apply border-border font-Inter;
   }
   body {
     @apply bg-background text-foreground;
   }
 }
 
-@font-face {
-  font-family: "Bodonitown";
-  src: url("../assets/fonts/Bodonitown.ttf") format("truetype");
-  font-weight: 500;
+body {
+  background-image: url("../assets/images/shade-2.svg"),
+    url("../assets/images/shade-1.svg");
+  background-position: left top, right top;
+  background-repeat: no-repeat;
+  background-size: 70%;
 }
 
 /* the slides */
@@ -88,15 +91,15 @@
 .slick-dots li .slick-active button:before {
   width: 20px !important;
   height: 20px !important;
-  color: #f2c618 !important;
-  background-color: #f2c618;
+  color: #dc5e3d !important;
+  background-color: #dc5e3d;
   border-radius: 50%;
 }
 .slick-dots li button:before {
   width: 20px !important;
   height: 20px !important;
-  color: #f2c618 !important;
-  background-color: #f2c618;
+  color: #dc5e3d !important;
+  background-color: #dc5e3d;
   border-radius: 50%;
 }
 .slick-dots {

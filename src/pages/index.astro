@@ -12,62 +12,32 @@ import TransformSection from "@/components/home/astro/TransformSection.astro";
 import StorySection from "@/components/home/react/Story";
 import FooterSection from "@/components/home/astro/FooterSection.astro";
 import Callbtn from "@/components/home/astro/Callbtn.astro";
-import Experience from "@/components/home/react/Experience";
+import Experience from "@/components/home/astro/Experience.astro";
 ---
 
 <Layout>
   <HeroSection />
-  <TransformSection/>
+  <TransformSection />
   <Insurance />
   <RehabProgramsSlider client:only />
-  <Callbtn/>
-  <div class="text-center mt-12">
-    <p class="text-xl font-semibold">Confidential |  Free  |  Available 24/7</p>
+
+  <div class="text-center mt-[45px]">
+    <Callbtn />
+    <p
+      class="font-medium mt-[10px] text-transparent bg-text-gradient bg-clip-text"
+    >
+      Confidential | Free | Available 24/7
+    </p>
   </div>
-  <StorySection client:only />
+  <div class="w-full">
+    <StorySection />
+  </div>
   <GetHelpNowSection />
   <RecoverySection
     recoveryImage={HandsImage}
     callMessageAction={CallMessageIcon}
   />
-  <Experience/>
+  <Experience />
   <Faq client:load />
- <FooterSection />
+  <FooterSection />
 </Layout>
-
-<style>
-  .hero-section {
-    background-image: url("../assets/images/banner.webp");
-  }
-  .gradient-line {
-    background: linear-gradient(
-      90deg,
-      rgba(153, 153, 153, 0) 0%,
-      #fff 38.4%,
-      #fff 61.17%,
-      rgba(153, 153, 153, 0) 100%
-    );
-  }
-
-  .stories-banner {
-    background-image: url("../assets//images/stories-banner.webp");
-  }
-
-  .why_choose_us {
-    background: linear-gradient(180deg, #f7f7fb 0%, #f7f7fb 44%, #f2e9c6 81%);
-  }
-
-  .orb-gradient-line {
-    background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0) 0%,
-      #f1f1f1 38.4%,
-      #f1f1f1 61.17%,
-      rgba(255, 255, 255, 0) 100%
-    );
-  }
-
-  .stories-banner {
-    background-image: url("../assets/images/stories-banner.webp");
-  }
-</style>

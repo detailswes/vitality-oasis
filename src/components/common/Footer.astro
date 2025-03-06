@@ -4,21 +4,22 @@ import WhiteLogo from "@/assets/images/white-logo.svg";
 ---
 
 <footer
-  class="footer-bg bg-center bg-cover bg-no-repeat relative overflow-hidden"
+  class="footer-bg bg-center bg-contain bg-no-repeat relative overflow-hidden"
 >
-  <div class="p-[18px] bg-[#0D0840] z-50 flex flex-col items-center justify-center text-center">
+  <div
+    class="p-[18px] bg-[#D98818] text-white z-50 flex flex-col items-center justify-center text-center"
+  >
     <div class="w-full sm:max-w-60 flex justify-center">
       <a href="/">
-        <Image src={WhiteLogo} alt="white-logo" class="md:w-full w-32" />
+        <Image src={WhiteLogo} alt="white-logo" class="md:w-[135px] w-32" />
       </a>
     </div>
-    <p class="text-[#9092A7] mt-2">
-      Copyright © 2025 <a href="/" class="text-secondary">Vitality Oasis</a> | All
+    <p class="mt-2">
+      Copyright © 2025 <a href="/" class="text-[#FBBC05]">Vitality Oasis</a> | All
       Rights Reserved
     </p>
   </div>
 </footer>
-
 
 <style>
   .footer-bg {

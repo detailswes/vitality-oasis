@@ -48,25 +48,25 @@ export default function AssesmentSteps() {
   };
 
   return currentStep === 4 ? (
-    <section className="min-h-[80vh] w-full flex justify-center items-center px-4 border-t border-[border-[#E1E1EF]]">
+    <section className="my-16 bg-white max-w-[1200px] mx-auto rounded-[30px] min-h-[80vh] w-full flex justify-center items-center px-4 border-t border-[border-[#E1E1EF]]">
       <div className="w-full sm:max-w-[630px] text-center">
         <img src={GreenCheckIcon.src} alt="green-check" className="mx-auto" />
-        <h2 className="text-5xl md:text-[56px] font-Bodonitown font-medium text-center px-4 mt-12 text-text leading-normal">
+        <h2 className="text-5xl md:text-[56px] font-Frank font-normal text-center px-4 mt-12 text-text leading-normal">
           Thank you! <br /> We'll contact you shortly
         </h2>
       </div>
     </section>
   ) : (
-    <section className="min-h-[90vh] pt-11 md:pt-[68px] pb-12 md:pb-[106px] border-t border-[#E1E1EF]">
+    <section className="my-16 bg-white max-w-[1200px] mx-auto rounded-[30px] min-h-[90vh] pt-11 md:pt-[68px] pb-12 md:pb-[106px] border-t border-[#E1E1EF]">
       <div className="sm:max-w-[618px] w-full mx-auto px-4">
         <div className="flex justify-between gap-2">
-          <h6 className="text-text font-Bodonitown font-medium text-xl sm:text-2xl md:text-3xl">
+          <h6 className="text-[#170F49] font-Frank font-normal text-xl sm:text-2xl md:text-[26px]">
             Objectives
           </h6>
-          <h6 className="text-text font-Bodonitown font-medium text-xl sm:text-2xl md:text-3xl">
+          <h6 className="text-[#170F49] font-Frank font-normal text-xl sm:text-2xl md:text-[26px]">
             Personal Details
           </h6>
-          <h6 className="text-text font-Bodonitown font-medium text-xl sm:text-2xl md:text-3xl">
+          <h6 className="text-[#170F49] font-Frank font-normal text-xl sm:text-2xl md:text-[26px]">
             Preferences
           </h6>
         </div>
@@ -74,21 +74,21 @@ export default function AssesmentSteps() {
         <div className="flex items-center gap-10 sm:gap-[50px] justify-center mt-[33px]">
           <div
             className={`w-full max-w-7 h-7 rounded-full ${
-              currentStep === 1 ? "bg-secondary" : "bg-primary"
+              currentStep === 1 ? "bg-primary" : "bg-[#DA871A]"
             }`}
           ></div>
           <div className="w-32 sm:w-28 h-[1px] bg-[#D9D9D9]"></div>
           <div
             className={`w-full max-w-7 h-7 rounded-full ${
               (currentStep === 1 && "bg-[#D9D9D9]") ||
-              (currentStep === 2 && "bg-secondary") ||
-              (currentStep === 3 && "bg-primary")
+              (currentStep === 2 && "bg-primary") ||
+              (currentStep === 3 && "bg-[#DA871A]")
             }`}
           ></div>
           <div className="w-32 sm:w-28 h-[1px] bg-[#D9D9D9]"></div>
           <div
             className={`w-full max-w-7 h-7 rounded-full ${
-              currentStep <= 2 ? "bg-[#D9D9D9]" : "bg-secondary"
+              currentStep <= 2 ? "bg-[#D9D9D9]" : "bg-primary"
             }`}
           ></div>
         </div>
@@ -127,24 +127,22 @@ export default function AssesmentSteps() {
               }
               setCurrentStep(currentStep - 1); // Move back a step
             }}
-            className="bg-white border border-primary text-primary hover:bg-white uppercase"
+            className="bg-white border border-secondary text-secondary hover:bg-white uppercase"
           >
             Back
           </Button>
         )}
 
         {currentStep <= 2 && (
-          <Button className="bg-secondary text-black hover:bg-secondary/90 uppercase">
-            Save
-          </Button>
+          <Button className="bg-btn-gradient text-white uppercase">Save</Button>
         )}
         {currentStep <= 2 && (
-          <Button onClick={handleContinue} className="uppercase">
+          <Button onClick={handleContinue} className="uppercase bg-secondary">
             Continue
           </Button>
         )}
         {currentStep === 3 && (
-          <Button onClick={handleContinue} className="uppercase">
+          <Button onClick={handleContinue} className="uppercase bg-secondary">
             Submit
           </Button>
         )}

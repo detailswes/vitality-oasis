@@ -6,7 +6,8 @@ export default {
     extend: {
       fontFamily: {
         sans: ["DM Sans", "sans-serif"],
-        Bodonitown: ["Bodonitown", "sans-serif"],
+        Inter: ["Inter", "sans-serif"],
+        Frank: ["Frank Ruhl Libre", "serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -25,15 +26,15 @@ export default {
           foreground: "hsl(var(--popover-foreground))",
         },
         primary: {
-          DEFAULT: "#4A3AFF",
+          DEFAULT: "#DC5E3D",
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "#F2C618",
+          DEFAULT: "#553665",
           foreground: "hsl(var(--secondary-foreground))",
         },
         text: {
-          DEFAULT: "#170F49",
+          DEFAULT: "#36243F",
         },
         muted: {
           DEFAULT: "hsl(var(--muted))",
@@ -79,6 +80,14 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      backgroundImage: {
+        "btn-gradient": "linear-gradient(95deg, #D98E13 0.28%, #DC5B3F 95.21%)",
+        "text-gradient": "linear-gradient(90deg, #19151C 0%, #5A386B 100%)",
+        "purple-gradient": "linear-gradient(90deg, #19151C 0%, #5A386B 100%)",
+      },
+      boxShadow: {
+        "btn-custom": "0px 3.337px 3.337px 0px rgba(108, 39, 18, 0.15)",
       },
     },
   },

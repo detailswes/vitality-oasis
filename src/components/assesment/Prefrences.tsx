@@ -40,7 +40,7 @@ export default function Prefrences({
 
   return (
     <div>
-      <h2 className="mt-11 md:mt-[69px] text-5xl md:text-[56px] font-Bodonitown font-medium text-center px-4">
+      <h2 className="mt-11 md:mt-[69px] text-5xl md:text-[56px] text-text font-Frank font-normal text-center px-4">
         Choose your preferences
       </h2>
 

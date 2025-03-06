@@ -58,7 +58,7 @@ const Objectives: React.FC<ObjectivesProps> = ({
 
   return (
     <div>
-      <h2 className="mt-11 md:mt-[69px] text-5xl md:text-[56px] font-Bodonitown font-medium text-center px-4">
+      <h2 className="mt-11 md:mt-[69px] text-5xl md:text-[56px] text-text font-Frank font-normal text-center px-4">
         What's your objectives with our program?
       </h2>
       <div className="mt-11 md:mt-16 w-full sm:max-w-[557px] mx-auto px-4">

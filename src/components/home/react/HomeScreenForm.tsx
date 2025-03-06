@@ -3,6 +3,7 @@ import * as Yup from "yup";
 import { Button } from "../../ui/button";
 import { Input } from "../../ui/input";
 import { Textarea } from "../../ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
 
 // Validation Schema
 const validationSchema = Yup.object().shape({
@@ -37,7 +38,7 @@ export default function HomeScreenForm() {
         email: "",
         message: "",
         optInCall: false, // Ensure this is a boolean
-        optInSMS: false,  // Ensure this is a boolean
+        optInSMS: false, // Ensure this is a boolean
       }}
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
@@ -92,50 +93,62 @@ export default function HomeScreenForm() {
             className="text-red-500 text-sm mt-1"
           />
 
-          {/* Opt-in Call Checkbox */}
-          <div className="mt-4">
-            <label className="flex items-center">
-              <Field
-                type="checkbox"
-                name="optInCall"
-                className="mr-2"
-              />
-              <span>Opt-in Call *</span>
-            </label>
-            <p className="text-sm text-gray-600">
-              By clicking this box you provide express written consent indicating a willingness for us to call you. We will never share your information.
-            </p>
-            <ErrorMessage
-              name="optInCall"
-              component="div"
-              className="text-red-500 text-sm mt-1"
-            />
-          </div>
+          <div className="flex flex-col md:flex-row gap-[30px]">
+            {/* Opt-in Call Checkbox */}
+            <div className="mt-4">
+              <p className="font-semibold text-black">
+                Opt-in Call <span className="text-red-600">*</span>
+              </p>
+              <label className="flex items-start gap-2 mt-1">
+                <Field
+                  type="checkbox"
+                  name="optInCall"
+                  className="mt-[2px] accent-primary "
+                />
+                <p className="text-[#1F1168] text-xs">
+                  By clicking this box you provide express written consent
+                  indicating a willingness for us to call you. We will never
+                  share your information.
+                </p>
+              </label>
 
-          {/* Opt-in SMS Checkbox */}
-          <div className="mt-4">
-            <label className="flex items-center">
-              <Field
-                type="checkbox"
-                name="optInSMS"
-                className="mr-2"
+              <ErrorMessage
+                name="optInCall"
+                component="div"
+                className="text-red-500 text-sm mt-1"
               />
-              <span>Opt-in SMS *</span>
-            </label>
-            <p className="text-sm text-gray-600">
-              By clicking this box you provide express written consent indicating a willingness for us to send you SMS messages. We will never share your information.
-            </p>
-            <ErrorMessage
-              name="optInSMS"
-              component="div"
-              className="text-red-500 text-sm mt-1"
-            />
+            </div>
+
+            {/* Opt-in SMS Checkbox */}
+            <div className="mt-4">
+              <p className="font-semibold text-black">
+                Opt-in SMS <span className="text-red-600">*</span>
+              </p>
+              <label className="flex items-start gap-2 mt-1">
+                <Field
+                  type="checkbox"
+                  name="optInSMS"
+                  className="mt-[2px] accent-primary "
+                />
+                <p className="text-[#1F1168] text-xs">
+                  By clicking this box you provide express written consent
+                  indicating a willingness for us to send you SMS messages. We
+                  will never share your information.
+                </p>
+              </label>
+
+              <ErrorMessage
+                name="optInSMS"
+                component="div"
+                className="text-red-500 text-sm mt-1"
+              />
+            </div>
           </div>
 
           <Button
             type="submit"
             disabled={isSubmitting}
-            className="uppercase py-5 mt-5 h-[54px] px-[30px] hover:bg-secondary hover:text-black"
+            className="uppercase py-5 mt-5 h-[54px] px-[30px] bg-secondary hover:bg-primary hover:text-white min-w-[183px] text-[13px] font-semibold"
           >
             Submit
           </Button>

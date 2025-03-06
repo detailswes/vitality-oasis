@@ -35,30 +35,33 @@ const faqItems = [
 
 export default function Faq() {
   return (
-    <section className="mt-[68px] mb-[90px]">
-      <h2 className="text-4xl md:text-[56px] text-center font-medium font-Bodonitown leading-[48px]">
-        Frequently Asked Questions
-      </h2>
-      <div className="w-full max-w-[200px] h-[1px] mt-4 orb-gradient-line mx-auto"></div>
+    <>
+      <div className="border-dashed border-t-2 border-[#E6D8CE] my-20" />
+      <section className="mt-[68px] mb-[90px]">
+        <h2 className="text-4xl md:text-[56px] text-center font-normal bg-text-gradient text-transparent bg-clip-text font-Frank leading-[62px] ">
+          Frequently Asked Questions
+        </h2>
+        <div className="w-full max-w-[200px] h-[1px] mt-4 orb-gradient-line mx-auto"></div>
 
-      <div className="mt-6 md:mt-[63px] mx-auto w-full max-w-[1200px] bg-[#F7F7FB] py-12 md:py-[87px] px-4 rounded-[20px]">
-        <div className="w-full max-w-[896px] mx-auto">
-          <Accordion type="single" defaultValue="item-1" collapsible>
-            {faqItems.map((item, index) => (
-              <AccordionItem
-                key={index}
-                value={`item-${index + 1}`}
-                className={`mt-${
-                  index > 0 ? 7 : 0
-                } hover:shadow-xl transition-shadow`}
-              >
-                <AccordionTrigger>{item.question}</AccordionTrigger>
-                <AccordionContent>{item.answer}</AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+        <div className="mt-6 md:mt-[63px] mx-auto w-full max-w-[1200px] bg-[#FDF7F3] py-12 md:py-[87px] px-4 rounded-[20px]">
+          <div className="w-full max-w-[896px] mx-auto">
+            <Accordion type="single" defaultValue="item-1" collapsible>
+              {faqItems.map((item, index) => (
+                <AccordionItem
+                  key={index}
+                  value={`item-${index + 1}`}
+                  className={`mt-${
+                    index > 0 ? 7 : 0
+                  } hover:shadow-xl transition-shadow`}
+                >
+                  <AccordionTrigger>{item.question}</AccordionTrigger>
+                  <AccordionContent>{item.answer}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

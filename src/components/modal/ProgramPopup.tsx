@@ -1,5 +1,6 @@
-import React from 'react';
-import {  type JSX } from "react";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import React from "react";
+import { type JSX } from "react";
 interface Program {
   image: JSX.Element;
   text: string;
@@ -13,19 +14,26 @@ interface PopupProps {
 }
 
 const Popup: React.FC<PopupProps> = ({ isOpen, onClose, program }) => {
-  if (!isOpen || !program) return null; 
+  if (!isOpen || !program) return null;
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-      <div className="bg-white p-5 rounded shadow-lg">
-        <h2 className="text-xl font-bold">{program.text}</h2>
-        <img src={program.image.props.src} alt={program.text} className="mt-4 w-full h-auto max-w-xs" 
- />
-        <p className="mt-2">{program.description}</p>
-        <button onClick={onClose} className="mt-4 bg-red-500 text-white px-4 py-2 rounded">
-          Close
-        </button>
-      </div>
-    </div>
+    <Dialog open={isOpen} onOpenChange={onClose}>
+      <DialogContent className="sm:max-w-[882px] bg-[#F7F7FB] !rounded-[20px]">
+        <div className="p-5 text-center ">
+          <h2 className="text-5xl font-normal text-[#1F1168] font-Frank">
+            {program.text}
+          </h2>
+
+          <p className="mt-4 text-[#170F49] leading-[27px] max-w-[707px] w-full mx-auto">
+            {program.description}
+          </p>
+          <img
+            src={program.image.props.src}
+            alt={program.text}
+            className="w-full max-w-[633px] h-auto mt-9 mx-auto"
+          />
+        </div>
+      </DialogContent>
+    </Dialog>
   );
 };
 
