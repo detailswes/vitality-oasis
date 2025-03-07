@@ -2,15 +2,20 @@
 import { heroSectionData } from "@/data/heroSectionData";
 
 import GetreviewsectionHeader from "./GetreviewsectionHeader.astro";
+import { Image } from "astro:assets";
+import MobileHeroImage from "@/assets/images/mob-hero.webp";
 ---
 
-<section class="flex lg:flex-row flex-col mt-10 md:mt-[70px]">
+<section class="flex lg:flex-row flex-col mt-0 gap-4 lg:gap-0 md:mt-[70px]">
+  <div class="lg:hidden">
+    <Image src={MobileHeroImage} alt="hero-section" />
+  </div>
   <div class="flex-1">
     <div
       class="pl-4 xl:ml-auto text-white w-full pb-4 pr-4 lg:pr-0 lg:max-w-[582px] mr-0 lg:mr-[36px]"
     >
       <h1
-        class="text-4xl md:text-5xl bg-text-gradient bg-clip-text font-normal font-Frank text-transparent leading-normal md:leading-[64px]"
+        class="text-4xl md:text-5xl bg-text-gradient bg-clip-text font-normal font-Frank text-transparent leading-[42px] md:leading-[64px]"
       >
         {heroSectionData.heading}
       </h1>
@@ -45,7 +50,7 @@ import GetreviewsectionHeader from "./GetreviewsectionHeader.astro";
         <div>
           <a href={`tel:${heroSectionData.contactNumber}`}>
             <div
-              class="shadow-btn-custom flex py-2 px-6 rounded-full hover:bg-white hover:text-primary hover:bg-none bg-btn-gradient text-white transition-all items-center gap-3"
+              class="shadow-btn-custom justify-center lg:justify-start flex py-2 px-6 rounded-full hover:bg-primary hover:bg-none bg-btn-gradient text-white transition-all items-center gap-3"
             >
               <svg
                 width="23"

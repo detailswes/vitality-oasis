@@ -146,7 +146,7 @@ const RehabProgramsSlider = () => {
         <h2 className="text-center text-4xl md:text-5xl text-[#1F1168] mt-10 md:mt-[89px] font-normal font-Frank">
           Find Hope and Healing
         </h2>
-        <p className="text-center text-lg md:text-[22px] font-normal mt-4 text-text">
+        <p className="text-center text-base md:text-[22px] font-normal mt-2 md:mt-5 text-text">
           Discover Our Comprehensive Rehab Programs
         </p>
         <div className="w-full max-w-[200px] h-[1px] orb-gradient-line mx-auto"></div>

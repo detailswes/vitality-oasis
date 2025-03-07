@@ -83,7 +83,7 @@ export default function Navbar() {
         {/* Right: Help Icon & Text */}
         <div className="ml-auto">
           <a href={`tel:(855)-871-53321`}>
-            <div className="flex py-1 md:py-2 px-3 md:px-6 rounded-full bg-btn-gradient  text-white hover:bg-white hover:text-primary hover:bg-none transition-all items-center gap-1 md:gap-3">
+            <div className="flex py-1 md:py-2 px-3 md:px-6 rounded-full bg-btn-gradient  text-white hover:bg-primary hover:bg-none transition-all items-center gap-1 md:gap-3">
               <svg
                 width="23"
                 height="21"

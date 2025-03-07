@@ -30,11 +30,11 @@ const { recoveryImage, callMessageAction } = Astro.props;
 
   <div class="w-full max-w-[595px]">
     <h2
-      class="text-4xl md:text-5xl font-normal font-Frank leading-normal md:leading-[58px] text-transparent bg-text-gradient bg-clip-text"
+      class="text-4xl md:text-5xl font-normal font-Frank leading-[42px] md:leading-[58px] text-transparent bg-text-gradient bg-clip-text"
     >
       {recoverySectionData.title}
     </h2>
-    <p class="text-text text-base md:text-lg font-normal">
+    <p class="mt-1 text-[#1F1168] text-base md:text-lg font-normal">
       {recoverySectionData.description}
     </p>
     <HomeScreenForm client:load />

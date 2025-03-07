@@ -81,7 +81,7 @@ export default function HomeScreenForm() {
           <Field
             name="message"
             as={Textarea}
-            className={`text-[14px] h-[204px] mt-[14px] ${getFieldClassNames(
+            className={`text-[14px] h-[122px] mt-[14px] ${getFieldClassNames(
               "message",
               touched,
               errors

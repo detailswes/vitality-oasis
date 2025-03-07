@@ -45,16 +45,16 @@ const StorySection = () => {
       <h2 className="text-4xl md:text-5xl font-normal bg-text-gradient bg-clip-text text-transparent font-Frank text-center leading-relaxed">
         Stories of Recovery
       </h2>
-      <p className="text-center text-lg md:text-[22px] text-text mb-10">
+      <p className="text-center text-base md:text-[22px] text-text mb-10 mt-2 md:mt-4">
         Real experiences from people who found hope and healing at Vitality
         Oasis.
       </p>
 
-      <div className="flex flex-wrap justify-center gap-5">
+      <div className="flex flex-wrap justify-center gap-5 items-start">
         {stories.map((story) => (
           <div
             key={story.id}
-            className={`bg-white rounded-lg shadow-[0px_3px_8px_0px_rgba(76,19,7,0.15)] px-5 pt-9 transition-all border-t-4 duration-300 flex flex-col justify-between h-auto w-full md:w-[30%] ${story.borderColor}`}
+            className={`bg-white md:min-h-[316px] rounded-lg shadow-[0px_3px_8px_0px_rgba(76,19,7,0.15)] px-5 pt-9 transition-all border-t-4 duration-300 flex flex-col justify-between h-auto w-full md:w-[30%] ${story.borderColor}`}
           >
             <div>
               <div className="flex items-center gap-[10px] mb-5">

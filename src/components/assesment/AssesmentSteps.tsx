@@ -51,7 +51,7 @@ export default function AssesmentSteps() {
     <section className="my-10 md:my-16 md:bg-white max-w-[1200px] mx-auto rounded-[30px] min-h-[80vh] w-full flex justify-center items-center px-4 md:border-t border-[border-[#E1E1EF]]">
       <div className="w-full sm:max-w-[630px] text-center">
         <img src={GreenCheckIcon.src} alt="green-check" className="mx-auto" />
-        <h2 className="text-4xl md:text-5xl md:text-[56px] font-Frank font-normal text-center px-4 mt-12 text-text leading-normal">
+        <h2 className="text-4xl md:text-5xl md:text-[56px] font-Frank font-normal text-center px-4 mt-12 text-text leading-[42px]">
           Thank you! <br /> We'll contact you shortly
         </h2>
       </div>
