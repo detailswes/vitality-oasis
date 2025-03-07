@@ -102,7 +102,7 @@ export default function Faq() {
                   value={`item-${index + 1}`}
                   className={`mt-${
                     index > 0 ? 7 : 0
-                  } hover:shadow-xl transition-shadow`}
+                  } transition-shadow  hover:shadow-lg hover:shadow-primary`}
                 >
                   <AccordionTrigger className="font-normal font-Inter text-[#1F1168]">
                     {item.question}
