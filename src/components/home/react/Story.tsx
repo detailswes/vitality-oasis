@@ -41,7 +41,7 @@ const StorySection = () => {
   ];
 
   return (
-    <div className="max-w-[1200px] w-full px-4 md:px-0 md:mx-auto mt-10 md:mt-[67px] mb-10 md:mb-28">
+    <div className="max-w-[1200px] w-full px-4 lg:px-0 md:mx-auto mt-10 md:mt-[67px] mb-10 md:mb-28">
       <h2 className="text-4xl md:text-5xl font-normal bg-text-gradient bg-clip-text text-transparent font-Frank text-center leading-relaxed">
         Stories of Recovery
       </h2>
@@ -50,11 +50,11 @@ const StorySection = () => {
         Oasis.
       </p>
 
-      <div className="flex flex-wrap justify-center gap-5 items-start">
+      <div className="flex flex-wrap md:flex-nowrap justify-center gap-5 items-start">
         {stories.map((story) => (
           <div
             key={story.id}
-            className={`bg-white md:min-h-[316px] rounded-lg shadow-[0px_3px_8px_0px_rgba(76,19,7,0.15)] px-5 pt-9 transition-all border-t-4 duration-300 flex flex-col justify-between h-auto w-full md:w-[30%] ${story.borderColor}`}
+            className={`bg-white md:min-h-[316px] rounded-lg shadow-[0px_3px_8px_0px_rgba(76,19,7,0.15)] px-5 pt-9 transition-all border-t-4 duration-300 flex flex-col justify-between h-auto w-full ${story.borderColor}`}
           >
             <div>
               <div className="flex items-center gap-[10px] mb-5">
