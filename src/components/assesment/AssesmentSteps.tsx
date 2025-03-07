@@ -48,16 +48,16 @@ export default function AssesmentSteps() {
   };
 
   return currentStep === 4 ? (
-    <section className="my-16 bg-white max-w-[1200px] mx-auto rounded-[30px] min-h-[80vh] w-full flex justify-center items-center px-4 border-t border-[border-[#E1E1EF]]">
+    <section className="my-10 md:my-16 md:bg-white max-w-[1200px] mx-auto rounded-[30px] min-h-[80vh] w-full flex justify-center items-center px-4 md:border-t border-[border-[#E1E1EF]]">
       <div className="w-full sm:max-w-[630px] text-center">
         <img src={GreenCheckIcon.src} alt="green-check" className="mx-auto" />
-        <h2 className="text-5xl md:text-[56px] font-Frank font-normal text-center px-4 mt-12 text-text leading-normal">
+        <h2 className="text-4xl md:text-5xl md:text-[56px] font-Frank font-normal text-center px-4 mt-12 text-text leading-normal">
           Thank you! <br /> We'll contact you shortly
         </h2>
       </div>
     </section>
   ) : (
-    <section className="my-16 bg-white max-w-[1200px] mx-auto rounded-[30px] min-h-[90vh] pt-11 md:pt-[68px] pb-12 md:pb-[106px] border-t border-[#E1E1EF]">
+    <section className="my-10 md:my-16 md:bg-white max-w-[1200px] mx-auto rounded-[30px] min-h-[90vh] pt-11 md:pt-[68px] pb-12 md:pb-[106px] md:border-t border-[#E1E1EF]">
       <div className="sm:max-w-[618px] w-full mx-auto px-4">
         <div className="flex justify-between gap-2">
           <h6 className="text-[#170F49] font-Frank font-normal text-xl sm:text-2xl md:text-[26px]">

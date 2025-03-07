@@ -36,9 +36,9 @@ const faqItems = [
 export default function Faq() {
   return (
     <>
-      <div className="border-dashed border-t-2 border-[#E6D8CE] my-20" />
-      <section className="mt-[68px] mb-[90px]">
-        <h2 className="text-4xl md:text-[56px] text-center font-normal bg-text-gradient text-transparent bg-clip-text font-Frank leading-[62px] ">
+      <div className="border-dashed border-t-2 border-[#E6D8CE] mt-10 md:my-20" />
+      <section className="my-10 md:mt-[68px] md:mb-[90px]">
+        <h2 className="text-4xl md:text-[56px] text-center font-normal bg-text-gradient text-transparent bg-clip-text font-Frank leading-normal md:leading-[62px] ">
           Frequently Asked Questions
         </h2>
         <div className="w-full max-w-[200px] h-[1px] mt-4 orb-gradient-line mx-auto"></div>

@@ -4,22 +4,22 @@ import { heroSectionData } from "@/data/heroSectionData";
 import GetreviewsectionHeader from "./GetreviewsectionHeader.astro";
 ---
 
-<section class="flex lg:flex-row flex-col mt-[70px]">
+<section class="flex lg:flex-row flex-col mt-10 md:mt-[70px]">
   <div class="flex-1">
     <div
       class="pl-4 xl:ml-auto text-white w-full pb-4 pr-4 lg:pr-0 lg:max-w-[582px] mr-0 lg:mr-[36px]"
     >
       <h1
-        class="text-5xl bg-text-gradient bg-clip-text font-normal font-Frank text-transparent leading-[64px]"
+        class="text-4xl md:text-5xl bg-text-gradient bg-clip-text font-normal font-Frank text-transparent leading-normal md:leading-[64px]"
       >
         {heroSectionData.heading}
       </h1>
       <p
-        class="text-xl leading-[34px] font-medium text-secondary max-w-[498px]"
+        class="text-base md:text-xl leading-[34px] font-medium text-secondary max-w-[498px]"
       >
         {heroSectionData.description}
       </p>
-      <p class="text-primary text-xl font-medium leading-[34px]">
+      <p class="text-primary text-base md:text-xl font-medium leading-[34px]">
         {heroSectionData.subheading}
       </p>
 
@@ -27,14 +27,15 @@ import GetreviewsectionHeader from "./GetreviewsectionHeader.astro";
         <div>
           <a href="/assesment/">
             <div
-              class="shadow-btn-custom text-center cursor-pointer py-1 rounded-full px-6 lg:min-w-[222px] w-full bg-transparent border-2 border-[#DC5E3D] text-lg leading-6"
+              class="group shadow-btn-custom text-center cursor-pointer py-[2px] rounded-full px-6 lg:min-w-[222px] w-full bg-transparent hover:bg-primary hover:text-white hover:border-primary transition-colors border-2 border-[#DC5E3D] leading-6"
             >
               <p
-                class="bg-text-gradient bg-clip-text text-transparent font-semibold"
+                class="group-hover:bg-none group-hover:text-white text-sm md:text-lg bg-text-gradient bg-clip-text text-transparent font-medium md:font-semibold"
               >
                 {heroSectionData.insuranceBtnText}
               </p>
-              <span class="bg-text-gradient bg-clip-text text-transparent"
+              <span
+                class="group-hover:bg-none group-hover:text-white text-sm md:text-lg bg-text-gradient bg-clip-text text-transparent"
                 >{heroSectionData.insuranceBtnDes}</span
               >
             </div>
@@ -44,7 +45,7 @@ import GetreviewsectionHeader from "./GetreviewsectionHeader.astro";
         <div>
           <a href={`tel:${heroSectionData.contactNumber}`}>
             <div
-              class="shadow-btn-custom flex py-2 px-6 rounded-full bg-btn-gradient text-white transition-colors items-center gap-3"
+              class="shadow-btn-custom flex py-2 px-6 rounded-full hover:bg-white hover:text-primary hover:bg-none bg-btn-gradient text-white transition-all items-center gap-3"
             >
               <svg
                 width="23"
@@ -74,7 +75,7 @@ import GetreviewsectionHeader from "./GetreviewsectionHeader.astro";
               </svg>
               <div>
                 <p class="text-sm">{heroSectionData.helpText}</p>
-                <p class="text-xl font-semibold leading-6">
+                <p class="text-lg md:text-xl font-semibold leading-6">
                   {heroSectionData.contactNumber}
                 </p>
               </div>

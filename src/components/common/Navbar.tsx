@@ -77,13 +77,13 @@ export default function Navbar() {
       <div className="max-w-[1200px] mx-auto flex items-center justify-between py-[14px]">
         {/* Left: Logo */}
         <a href="/" className="flex items-center">
-          <img src={Logo.src} alt="Logo" className="w-[107px]" />
+          <img src={Logo.src} alt="Logo" className="w-24 md:w-[107px]" />
         </a>
 
         {/* Right: Help Icon & Text */}
         <div className="ml-auto">
           <a href={`tel:(855)-871-53321`}>
-            <div className="flex py-2 px-6 rounded-full bg-btn-gradient  text-white transition-colors items-center gap-3">
+            <div className="flex py-1 md:py-2 px-3 md:px-6 rounded-full bg-btn-gradient  text-white hover:bg-white hover:text-primary hover:bg-none transition-all items-center gap-1 md:gap-3">
               <svg
                 width="23"
                 height="21"
@@ -114,8 +114,8 @@ export default function Navbar() {
                 ></path>
               </svg>
               <div>
-                <p className="text-sm">Free Confidential Helpline</p>
-                <p className="text-xl font-semibold leading-6">
+                <p className="text-xs md:text-sm">Free Confidential Helpline</p>
+                <p className="text-sm md:text-xl font-medium md:font-semibold leading-6">
                   (855)-871-53321
                 </p>
               </div>

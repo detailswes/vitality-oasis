@@ -19,7 +19,7 @@ const Popup: React.FC<PopupProps> = ({ isOpen, onClose, program }) => {
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[882px] bg-[#F7F7FB] !rounded-[20px]">
         <div className="p-5 text-center ">
-          <h2 className="text-5xl font-normal text-[#1F1168] font-Frank">
+          <h2 className="text-4xl md:text-5xl font-normal text-[#1F1168] font-Frank">
             {program.text}
           </h2>
 

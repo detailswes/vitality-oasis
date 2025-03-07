@@ -13,4 +13,13 @@ export default defineConfig({
     }),
     react(),
   ],
+  server: {
+    host: true,
+    port: 4321,
+  },
+  vite: {
+    server: {
+      allowedHosts: ["5c15-112-196-82-212.ngrok-free.app"],
+    },
+  },
 });

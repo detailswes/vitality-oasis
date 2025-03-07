@@ -142,16 +142,16 @@ const RehabProgramsSlider = () => {
   return (
     <>
       {" "}
-      <section>
-        <h2 className="text-center text-5xl text-[#1F1168] mt-[89px] font-normal font-Frank">
+      <section className="px-4 md:px-0">
+        <h2 className="text-center text-4xl md:text-5xl text-[#1F1168] mt-10 md:mt-[89px] font-normal font-Frank">
           Find Hope and Healing
         </h2>
-        <p className="text-center text-[22px] font-normal mt-4 text-text">
+        <p className="text-center text-lg md:text-[22px] font-normal mt-4 text-text">
           Discover Our Comprehensive Rehab Programs
         </p>
         <div className="w-full max-w-[200px] h-[1px] orb-gradient-line mx-auto"></div>
       </section>
-      <div className="overflow-auto flex gap-[14px] mt-[53px]"></div>
+      <div className="overflow-auto flex gap-[14px] mt-8 md:mt-[53px]"></div>
       <div className="pb-16 overflow-hidden">
         <Slider {...settings}>
           {programs.map((program) => (
