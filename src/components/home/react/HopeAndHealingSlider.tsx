@@ -13,7 +13,7 @@ interface program {
   description: string;
 }
 
-const RehabProgramsSlider = () => {
+const HopeAndHealingSlider = () => {
   const [isMounted, setIsMounted] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [selectedProgram, setSelectedProgram] = useState<program | null>(null);
@@ -199,4 +199,4 @@ const RehabProgramsSlider = () => {
   );
 };
 
-export default RehabProgramsSlider;
+export default HopeAndHealingSlider;

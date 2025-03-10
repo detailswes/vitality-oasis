@@ -1,7 +1,6 @@
 ---
 import Footer from "@/components/common/Footer.astro";
 import Navbar from "@/components/common/Navbar";
-import PreHeader from "@/components/common/PreHeader.astro";
 import "@/styles/global.css";
 import SpeedInsights from "@vercel/speed-insights/astro";
 ---
@@ -18,7 +17,6 @@ import SpeedInsights from "@vercel/speed-insights/astro";
     <!--End of Tawk.to Script-->
   </head>
   <body>
-    <!-- <PreHeader /> -->
     <Navbar client:load />
     <slot />
     <Footer />
