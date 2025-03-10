@@ -93,7 +93,7 @@ export default function HomeScreenForm() {
             className="text-red-500 text-sm mt-1"
           />
 
-          <div className="flex flex-col md:flex-row gap-[30px]">
+          <div className="flex flex-col md:flex-row gap-0 md:gap-[30px]">
             {/* Opt-in Call Checkbox */}
             <div className="mt-4">
               <p className="font-semibold text-black">

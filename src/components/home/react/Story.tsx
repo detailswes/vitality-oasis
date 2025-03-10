@@ -54,10 +54,9 @@ const StorySection = () => {
         {stories.map((story) => (
           <div
             key={story.id}
-            onClick={() => toggleCard(story.id)}
             className={`bg-white cursor-pointer hover:shadow-xl hover:shadow-primary md:min-h-[316px] rounded-lg shadow-[0px_3px_8px_0px_rgba(76,19,7,0.15)] px-5 pt-9 transition-all border-t-4 duration-300 flex flex-col justify-between h-auto w-full ${story.borderColor}`}
           >
-            <div>
+            <div onClick={() => toggleCard(story.id)}>
               <div className="flex items-center gap-[10px] mb-5">
                 <div className="h-12 w-12 rounded-full bg-primary text-white flex items-center justify-center text-[30px] font-bold">
                   {story.name?.charAt(0)}

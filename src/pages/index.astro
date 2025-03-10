@@ -13,10 +13,12 @@ import StorySection from "@/components/home/react/Story";
 import FooterSection from "@/components/home/astro/FooterSection.astro";
 import Callbtn from "@/components/home/astro/Callbtn.astro";
 import Experience from "@/components/home/astro/Experience.astro";
+import { ExitIntentPopup } from "@/components/modal/ExitIntentPopup";
 ---
 
 <Layout>
   <HeroSection />
+  <ExitIntentPopup client:load />
   <TransformSection />
   <Insurance />
   <RehabProgramsSlider client:only />
