@@ -126,7 +126,7 @@ import MobileHeroImage from "@/assets/images/mob-hero.webp";
 
       <section class="max-w-sm mx-auto bg-white rounded-lg">
        
-        <p class="text-center font-semibold text-black mt-4 text-primary">
+        <p class="text-center font-bold text-black mt-4 text-primary">
          Provide your contact details
 
         </p>
@@ -136,7 +136,7 @@ import MobileHeroImage from "@/assets/images/mob-hero.webp";
               type="text"
               id="fullName"
               name="fullName"
-              placeholder=" Name"
+              placeholder=" Name *"
               class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             <p id="fullNameError" class="text-red-500 text-sm hidden"></p>
@@ -147,7 +147,7 @@ import MobileHeroImage from "@/assets/images/mob-hero.webp";
     type="email"
     id="email"
     name="email"
-    placeholder="Email"
+    placeholder="Email *"
     class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
   />
   <p id="emailError" class="text-red-500 text-sm hidden"></p>
@@ -158,7 +158,7 @@ import MobileHeroImage from "@/assets/images/mob-hero.webp";
               type="tel"
               id="telephone"
               name="telephone"
-              placeholder="contact Number"
+              placeholder="Contact Number *"
               maxlength="10"
               class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
@@ -170,7 +170,7 @@ import MobileHeroImage from "@/assets/images/mob-hero.webp";
             type="submit"
             class="w-full bg-primary text-white py-2 rounded-md transition "
           >
-          save
+          SAVE
           </button>
         </form>
       </section>
@@ -193,18 +193,18 @@ import MobileHeroImage from "@/assets/images/mob-hero.webp";
     const closePopup = document.getElementById('closePopup');
     const coverageForm = document.getElementById('coverageForm');
 
-    const contactNumber = "{heroSectionData.contactNumber}"; // Your contact number
+    const contactNumber = "{heroSectionData.contactNumber}"; 
 
     const validationSchema = {
       fullName: {
-        required: "Full name is required",
+        required: " Name is required",
         validate: (value) => !!value || "Full name is required"
       },
       telephone: {
-        required: "Telephone is required",
+        required: "Contact Number is required ",
         validate: (value) => {
           if (!value) return "Telephone is required";
-          if (!/^\d{10}$/.test(value)) return "Telephone must be 10 digits";
+          if (!/^\d{10}$/.test(value)) return "Contact Number must be 10 digits";
           return true;
         }
       },
@@ -263,17 +263,19 @@ import MobileHeroImage from "@/assets/images/mob-hero.webp";
     function validateForm() {
       const fullName = document.getElementById('fullName').value;
       const telephone = document.getElementById('telephone').value;
+      const email = document.getElementById('email').value;
       const insuranceType = document.getElementById('insuranceType')?.value || '';
 
       const isFullNameValid = validateField('fullName', fullName);
       const isTelephoneValid = validateField('telephone', telephone);
+      const isEmailValid = validateField('email', email);
       const isInsuranceTypeValid = validateField('insuranceType', insuranceType);
 
-      return isFullNameValid && isTelephoneValid && isInsuranceTypeValid;
+      return isFullNameValid && isTelephoneValid && isEmailValid && isInsuranceTypeValid;
     }
 
     if (coverageForm) {
-      const fields = ['fullName', 'telephone', 'insuranceType'];
+      const fields = ['fullName', 'telephone', 'email', 'insuranceType'];
       fields.forEach(fieldName => {
         const field = document.getElementById(fieldName);
         if (field) {
@@ -295,6 +297,7 @@ import MobileHeroImage from "@/assets/images/mob-hero.webp";
         if (validateForm()) {
           const formData = {
             fullName: document.getElementById('fullName').value,
+            email: document.getElementById('email').value,
             telephone: document.getElementById('telephone').value,
             insuranceType: document.getElementById('insuranceType')?.value || ''
           };

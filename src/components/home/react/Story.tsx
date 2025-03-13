@@ -2,17 +2,14 @@ import { useState, useEffect, useRef } from "react";
 import StarsImage from "@/assets/images/stars.svg";
 
 const StorySection = () => {
-  const [expandedCards, setExpandedCards] = useState<{ [key: string]: boolean }>({});
+  const [expandedCard, setExpandedCard] = useState<string | null>(null);
   const [showToggleButton, setShowToggleButton] = useState<{ [key: string]: boolean }>({});
   const textRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
-  const CHARACTER_LIMIT = 227; 
+  const CHARACTER_LIMIT = 200;
 
   function toggleCard(cardId: string) {
-    setExpandedCards((prev) => ({
-      ...prev,
-      [cardId]: !prev[cardId],
-    }));
+    setExpandedCard((prev) => (prev === cardId ? null : cardId)); // Collapse others
   }
 
   const stories = [
@@ -40,14 +37,12 @@ const StorySection = () => {
   ];
 
   useEffect(() => {
-    const newShowToggleButton = { ...showToggleButton };
-    stories.forEach((story) => {
-      if (story.review.length > CHARACTER_LIMIT) {
-        newShowToggleButton[story.id] = true;
-      } else {
-        newShowToggleButton[story.id] = false; // Hide View More for 227 characters or less
-      }
-    });
+    const newShowToggleButton = stories.reduce((acc, story) => {
+      // Only check for cards 1 and 3, always set card2 to false
+      acc[story.id] = story.id !== "card2" && story.review.length > CHARACTER_LIMIT;
+      return acc;
+    }, {} as { [key: string]: boolean });
+
     setShowToggleButton(newShowToggleButton);
   }, []);
 
@@ -60,14 +55,13 @@ const StorySection = () => {
         Real experiences from people who found hope and healing at Vitality Oasis.
       </p>
 
-      {/* Ensuring equal height using grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 items-stretch">
+      <div className="flex flex-wrap md:flex-nowrap justify-center gap-5 items-start">
         {stories.map((story) => (
           <div
             key={story.id}
-            className={`bg-white cursor-pointer hover:shadow-xl hover:shadow-primary rounded-lg shadow-[0px_3px_8px_0px_rgba(76,19,7,0.15)] px-5 pt-9 transition-all border-t-4 duration-300 flex flex-col justify-between h-full w-full ${story.borderColor}`}
+            className={`bg-white cursor-pointer hover:shadow-xl hover:shadow-primary md:min-h-[316px] rounded-lg shadow-[0px_3px_8px_0px_rgba(76,19,7,0.15)] px-5 pt-9 transition-all border-t-4 duration-300 flex flex-col justify-between h-auto w-full ${story.borderColor} ${story.id === "card2" ? "mb-8 md:mb-0" : ""}`}
           >
-            <div onClick={() => toggleCard(story.id)} className="pb-[25px] flex-1">
+            <div onClick={() => toggleCard(story.id)}>
               <div className="flex items-center gap-[10px] mb-5">
                 <div className="h-12 w-12 rounded-full bg-primary text-white flex items-center justify-center text-[30px] font-bold">
                   {story.name?.charAt(0)}
@@ -77,29 +71,31 @@ const StorySection = () => {
                   <img src={StarsImage.src} alt="stars" />
                 </div>
               </div>
-
-              {/* Text Section */}
+              
+              {/* Text container with animation - card2 always shows full text */}
               <div
                 ref={(el) => {
                   textRefs.current[story.id] = el;
                 }}
-                className="transition-all duration-1000"
+                className={`overflow-hidden transition-all duration-1000 ${
+                  expandedCard === story.id || story.id === "card2" ? "max-h-[500px]" : "max-h-[72px]"
+                }`}
               >
-                <p className="text-gray-600">
-                  {expandedCards[story.id]
-                    ? story.review
-                    : story.review.slice(0, CHARACTER_LIMIT) + (story.review.length > CHARACTER_LIMIT ? "..." : "")}
+                <p className={`text-gray-600 ${story.id === "card2" ? "pb-6 md:pb-0" : ""}`}>
+                  {story.review}
                 </p>
               </div>
             </div>
 
-            {/* View More Button - Only for text exceeding 227 characters */}
             {showToggleButton[story.id] && (
               <button
-                onClick={() => toggleCard(story.id)}
+                onClick={(e) => {
+                  e.stopPropagation(); // Prevent card click event
+                  toggleCard(story.id);
+                }}
                 className="mt-3 mb-6 text-primary hover:underline self-start flex items-center"
               >
-                {expandedCards[story.id] ? (
+                {expandedCard === story.id ? (
                   <span>
                     Show Less <span>↑</span>
                   </span>
