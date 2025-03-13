@@ -2,8 +2,8 @@ export const recoverySectionData = {
   title: "Begin Your Journey to Lasting Recovery!",
   description:
     "Taking the first step is often the hardest. We're here to make it easier. Fill out this form, and our admissions team will contact you for a confidential, no-obligation consultation.",
-  phoneNumber: "855-871-53321",
-  callMessageTitle: "*100% Confidential",
+  
+  callMessageTitle: "Jordan Miller",
   callMessageDescription:
-    "Check your coverage and get informed on admission process!",
+    "This team made starting my recovery easy. I filled out the form, and they quickly reached out for a confidential, no-pressure consultation. Highly recommend!",
 };

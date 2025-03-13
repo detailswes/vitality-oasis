@@ -4,20 +4,19 @@ import { commonBtnsData } from "@/data/commonBtnsData";
 
 <a href={`tel:(855)-871-53321`}>
   <div
-    class="relative flex py-1 md:py-2 px-3 md:px-6 rounded-full bg-btn-gradient text-white overflow-hidden transition-all duration-300 ease-in-out items-center gap-1 md:gap-3 group"
+    class="relative flex py-2 md:py-3 px-6 md:px-10 rounded-full bg-btn-gradient text-white overflow-hidden transition-all duration-300 ease-in-out items-center gap-2 md:gap-4 group w-full max-w-lg"
   >
     {/* Background Slide Effect */}
     <div
       class="absolute inset-0 bg-primary scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-in-out"
-    >
-    </div>
+    ></div>
 
     {/* Content */}
-    <div class="relative flex items-center gap-1 md:gap-3 z-10">
+    <div class="relative flex items-center gap-2 md:gap-4 z-10">
       {/* Icon */}
       <svg
-        width="23"
-        height="21"
+        width="26"
+        height="24"
         viewBox="0 0 23 21"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -28,28 +27,33 @@ import { commonBtnsData } from "@/data/commonBtnsData";
           stroke="currentColor"
           stroke-width="2.23022"
           stroke-linecap="round"
-          stroke-linejoin="round"></path>
+          stroke-linejoin="round"
+        ></path>
         <path
           d="M13.5692 5.69421C14.3052 6.01208 14.9743 6.44275 15.5318 6.96569C16.0782 7.46813 16.5354 8.07311 16.87 8.72936"
           stroke="currentColor"
           stroke-width="2.23022"
           stroke-linecap="round"
-          stroke-linejoin="round"></path>
+          stroke-linejoin="round"
+        ></path>
         <path
           d="M14.6843 1.80798C16.2566 2.18738 17.6617 2.93591 18.7768 3.9613C19.8807 4.98668 20.6948 6.26842 21.0962 7.70396"
           stroke="currentColor"
           stroke-width="2.23022"
           stroke-linecap="round"
-          stroke-linejoin="round"></path>
+          stroke-linejoin="round"
+        ></path>
       </svg>
 
-      {/* Text */}
-      <div class="transition-all duration-300 ease-in-out">
-        <p class="text-xs md:text-sm">{commonBtnsData.getHelpNow}</p>
-        <p class="text-sm md:text-xl font-medium md:font-semibold leading-6">
-          {commonBtnsData.phoneNumber}
-        </p>
-      </div>
+      {/* Text Container */}
+      <div class="flex flex-col items-start">
+  <p class="text-lg md:text-base font-bold">{commonBtnsData.getHelpNow}</p>
+  <p class="text-xs md:text-sm font-medium md:font-semibold leading-6 mr-1">
+    {commonBtnsData.phoneNumber}
+  </p>
+</div>
+
     </div>
   </div>
 </a>
+

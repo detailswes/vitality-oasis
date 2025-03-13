@@ -15,7 +15,7 @@ interface PreferencesProps {
   error?: boolean;
 }
 
-export default function Prefrences({
+export default function preferences({
   onSelectionChange,
   error,
 }: PreferencesProps) {
