@@ -28,5 +28,5 @@ export const insuranceData = {
     { image: Brand10 },
     { image: Brand11 },
   ],
-  btnbelowtext:"Available 24/7"
+  btnbelowtext:"100% Confidential | No Risk | 24/7 Support"
 };

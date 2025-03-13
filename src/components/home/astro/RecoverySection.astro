@@ -2,7 +2,8 @@
 import { recoverySectionData } from "@/data/recoverySectionData";
 import { Image } from "astro:assets";
 import HomeScreenForm from "@/components/home/react/HomeScreenForm";
-const { recoveryImage, callMessageAction } = Astro.props;
+const { recoveryImage } = Astro.props;
+import StarsImage from "@/assets/images/stars.svg";
 ---
 
 <section
@@ -10,20 +11,29 @@ const { recoveryImage, callMessageAction } = Astro.props;
 >
   <div class="w-full max-w-[455px]">
     <Image src={recoveryImage} alt="start-recover" class="w-full" />
-    <div
-      class="mt-2 bg-primary text-white flex flex-col sm:flex-row items-start p-[30px] gap-[18px]"
+
+    <div 
+      class="bg-primary rounded-lg  px-5 pt-9 transition-all  w-full max-w-[455px] mt-[-6px]"
     >
-      <Image src={callMessageAction} alt="call-msg" />
-      <div>
-        <h6 class="text-lg md:text-xl font-medium">
-          {recoverySectionData.callMessageTitle}
-        </h6>
-        <h6 class="text-2xl md:text-4xl font-bold">
-          {recoverySectionData.phoneNumber}
-        </h6>
-        <p class="leading-[23px]">
-          {recoverySectionData.callMessageDescription}
-        </p>
+      <div class="flex items-center gap-[10px] mb-5 ">
+        <div class="h-12 w-12 rounded-full bg-white text-primary flex items-center justify-center text-[30px] font-bold">
+          J
+        </div>
+        <div>
+          <div class="text-xl font-medium text-white">Jordan Miller</div>
+          <Image src={StarsImage} alt="stars" />
+        </div>
+      </div>
+
+    
+      <div class="cursor-pointer">
+        <div  class=transition-all duration-500 ">
+          <p class="text-white font-medium">
+            This team made starting my recovery easy. I filled out the form, and they quickly reached out for a confidential, no-pressure consultation. Highly recommend!
+          </p>
+        </div>
+
+       
       </div>
     </div>
   </div>
@@ -40,3 +50,4 @@ const { recoveryImage, callMessageAction } = Astro.props;
     <HomeScreenForm client:load />
   </div>
 </section>
+
