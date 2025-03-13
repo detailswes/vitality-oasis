@@ -38,7 +38,7 @@ const StorySection = () => {
 
   useEffect(() => {
     const newShowToggleButton = stories.reduce((acc, story) => {
-      // Only check for cards 1 and 3, always set card2 to false
+   
       acc[story.id] = story.id !== "card2" && story.review.length > CHARACTER_LIMIT;
       return acc;
     }, {} as { [key: string]: boolean });
@@ -72,7 +72,7 @@ const StorySection = () => {
                 </div>
               </div>
               
-              {/* Text container with animation - card2 always shows full text */}
+            
               <div
                 ref={(el) => {
                   textRefs.current[story.id] = el;

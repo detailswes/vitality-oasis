@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import Objectives from "./Objectives";
 import PersonalDetails from "./PersonalDetails";
-import Prefrences from "./Prefrences";
+import Preferences from "./ preferences";
 import GreenCheckIcon from "@/assets/icons/green-check.svg";
 import { Button } from "../ui/button";
 
@@ -108,7 +108,7 @@ export default function AssesmentSteps() {
         />
       )}
       {currentStep === 3 && (
-        <Prefrences
+        <Preferences
           onSelectionChange={handlePreferencesChange}
           error={preferencesError}
         />
