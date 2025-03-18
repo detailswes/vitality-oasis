@@ -1,10 +1,15 @@
 ---
 import TwentyFourSevenIcon from "@/assets/icons/24.svg";
+import ease from "@/assets/icons/ease.svg"
+import plan from "@/assets/icons/plan.svg";
 import CopyIcon from "@/assets/icons/copy-lock.svg";
 import AchievementIcon from "@/assets/icons/achievment.svg";
 import ShieldIcon from "@/assets/icons/shield.svg";
 import { Image } from "astro:assets";
 import Callbtn from "./Callbtn.astro";
+import around_clock from "@/assets/icons/around_clock.svg";
+import rest from "@/assets/icons/rest.svg";
+import smooth_transition from "@/assets/icons/smooth_transition.svg"
 ---
 
 <div class="max-w-[1168px] mx-auto p-[12px] mt-10 md:mt-16">
@@ -44,9 +49,9 @@ import Callbtn from "./Callbtn.astro";
         class="w-[50px] h-[50px]  md:ml-[6px]  flex items-center justify-center rounded-full border-4 border-primary bg-white transition-all duration-700 hover:rotate-12 hover:scale-110 group-hover:translate-y-2"
       >
         <Image
-          src={TwentyFourSevenIcon}
+          src={ease}
           alt="icon"
-          class="transition-transform duration-500 group-hover:scale-110 "
+          class="w-7 h-7 transition-transform duration-500 group-hover:scale-110 "
         />
       </div>
     </div>
@@ -58,9 +63,9 @@ import Callbtn from "./Callbtn.astro";
         class="w-[50px] h-[50px]   md:mr-[6px] flex items-center justify-center rounded-full border-4 border-[#D98917] bg-white transition-all duration-700 hover:rotate-12 hover:scale-110 group-hover:translate-y-2"
       >
         <Image
-          src={CopyIcon}
+          src={plan}
           alt="icon"
-          class="transition-transform duration-500 group-hover:scale-110"
+          class="w-7 h-7 transition-transform duration-500 group-hover:scale-110"
         />
       </div>
       <div
@@ -97,9 +102,9 @@ import Callbtn from "./Callbtn.astro";
         class="w-[50px] h-[50px] flex items-center justify-center rounded-full border-4 border-primary bg-white transition-all duration-700 hover:rotate-12 hover:scale-110 group-hover:translate-y-2"
       >
         <Image
-          src={AchievementIcon}
+          src={around_clock}
           alt="icon"
-          class="transition-transform duration-500 group-hover:scale-110"
+          class="w-7 h-7 transition-transform duration-500 group-hover:scale-110"
         />
       </div>
     </div>
@@ -111,9 +116,9 @@ import Callbtn from "./Callbtn.astro";
         class="w-[50px] h-[50px] flex items-center justify-center rounded-full border-4 border-[#D98917] bg-white transition-all duration-700 hover:rotate-12 hover:scale-110 group-hover:translate-y-2"
       >
         <Image
-          src={ShieldIcon}
+          src={rest}
           alt="icon"
-          class="transition-transform duration-500 group-hover:scale-110"
+          class="w-7 h-7 transition-transform duration-500 group-hover:scale-110"
         />
       </div>
       
@@ -152,9 +157,9 @@ import Callbtn from "./Callbtn.astro";
         class="w-[50px] h-[50px] flex items-center justify-center rounded-full border-4 border-primary bg-white transition-all duration-700 hover:rotate-12 hover:scale-110 group-hover:translate-y-2"
       >
         <Image
-          src={AchievementIcon}
+          src={smooth_transition}
           alt="icon"
-          class="transition-transform duration-500 group-hover:scale-110"
+          class="w-7 h-7 transition-transform duration-500 group-hover:scale-110"
         />
       </div>
     </div>
@@ -201,9 +206,19 @@ import Callbtn from "./Callbtn.astro";
 </script>
 
 <style>
-  /* Define the animation classes */
+  
+  h2, p {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+
   .animate-in {
     animation: fadeIn 2s ease forwards;
+    position: relative; /* Ensures z-index works */
+    will-change: opacity, transform;
+    backface-visibility: hidden;
   }
 
   @keyframes fadeIn {
@@ -217,11 +232,31 @@ import Callbtn from "./Callbtn.astro";
     }
   }
 
-  /* Add a small parallax effect to the entire component */
+ 
+  .text-[22px] {
+    font-size: 22px;
+    font-weight: 500;
+    color: #1F1168;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #1F1168;
+  }
+
+
+  .bg-white {
+    background-color: #ffffff;
+  }
+
+
   @media (prefers-reduced-motion: no-preference) {
     div.max-w-\[1168px\] {
       transform-style: preserve-3d;
       perspective: 1000px;
+      position: relative;
     }
   }
 </style>
+

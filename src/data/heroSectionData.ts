@@ -6,7 +6,7 @@ export const heroSectionData = {
     "We understand the struggles of addiction and the courage it takes to seek help.",
 
   contactNumber: "(855)-871-53321",
-  helpText: "Speak to a Care Counselor",
+  helpText: "Free Confidential Helpline",
   insuranceBtnText: "Verify Insurance",
   insuranceBtnDes: "It’s Fast and Free",
   reviewheading: "100% Confidential  | Insurance Accepted  |  24/7 Support",
