@@ -168,7 +168,7 @@ export function ExitIntentPopup() {
                       {/* Text */}
                       <div className="transition-all duration-300 ease-in-out">
                         <p className="text-xs md:text-sm font-bold">
-                        Speak to a Care Counselor 
+                        Free Confidential Helpline
                         </p>
                         <p className="text-xs md:text-xs font-medium md:font-semibold leading-6">
                           (855)-871-53321
