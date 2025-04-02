@@ -7,7 +7,7 @@
 
 ## Clone the repository
 
-    git clone https://github.com/detailswes/rehab-center.git
+    git clone https://github.com/detailswes/vitality-oasis
 
 ## Install the required dependecies
 

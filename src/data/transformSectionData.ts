@@ -1,9 +1,7 @@
-import room1 from "@/assets/images/image1.svg";
-import room2 from "@/assets/images/image2.svg";
+import room1 from "@/assets/images/image1.png";
+import room2 from "@/assets/images/image2.png";
 import room3 from "@/assets/images/image3.svg";
 import room4 from "@/assets/images/image4.svg";
-import room5 from "@/assets/images/image5.svg";
-import room6 from "@/assets/images/image6.svg";
 
 export const transformSectionData = {
   heading:
